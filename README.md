@@ -5,12 +5,12 @@ The goal of the HuskyPal application is to allow students to explore and experie
 
 # Layout:
 
-  # client:
-      The "client" folder is where we work on the user interface, handle user interactions, and manage the client-side logic of our full-stack application. Properly structuring our code within this folder helps maintain a clean and organized codebase, making it easier to develop, maintain, and scale our frontend code as our project grows.
-  # public/:
-      This folder contains static assets and files that are served directly to the client's browser. Common contents include:
-      index.html: The main HTML file that serves as the entry point for our web application.
-      Images, fonts, and other static files that are used in our frontend and should be publicly accessible.
+# client:
+The "client" folder is where we work on the user interface, handle user interactions, and manage the client-side logic of our full-stack application. Properly structuring our code within this folder helps maintain a clean and organized codebase, making it easier to develop, maintain, and scale our frontend code as our project grows.
+# public/:
+This folder contains static assets and files that are served directly to the client's browser. Common contents include:
+index.html: The main HTML file that serves as the entry point for our web application.
+Images, fonts, and other static files that are used in our frontend and should be publicly accessible.
 
   # src/:
       The "src" (source) folder is where we keep the source code of our frontend application. It's the heart of our frontend codebase and often contains the following sub-folders:
