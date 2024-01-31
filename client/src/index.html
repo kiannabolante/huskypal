@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HuskyPal Selection</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="title">
+    <h2>Welcome!</h2>
+    <p>Please pick a trait for your HuskyPal:</p>
+  </div>
+  <form id="traitForm">
+    <label class="trait">
+      <input type="radio" name="trait" value="athletic" class="radio">
+      Athletic
+    </label>
+    <label class="trait">
+      <input type="radio" name="trait" value="creative" class="radio">
+      Creative
+    </label>
+    <label class="trait">
+      <input type="radio" name="trait" value="studious" class="radio">
+      Studious
+    </label>
+    <label class="trait">
+      <input type="radio" name="trait" value="foodie" class="radio">
+      Foodie
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+document.getElementById('traitForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const trait = document.querySelector('input[name="trait"]:checked').value;
+  console.log('Selected trait:', trait);
+});
+</script>
+
+</body>
+</html>
