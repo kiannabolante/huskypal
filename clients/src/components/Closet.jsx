@@ -10,6 +10,8 @@ import image5 from '../images/image5.png'
 import image6 from '../images/image6.png'
 import image7 from '../images/image7.png'
 import image8 from '../images/image8.png'
+import image9 from '../images/image9.png';
+
 const Closet = () => {
   return (
     <div className='container '>
@@ -41,7 +43,9 @@ const Closet = () => {
               </th>
             </tr>
             <tr className="taller-row">
-              <th></th>
+              <th><img src={image9} alt='activate1' className='activate' />
+              </th>
+
               <td></td>
             </tr>
             <tr className="taller-row">
@@ -65,7 +69,6 @@ const Closet = () => {
         </section>
       </section>
     </div>
-
 
   )
 }

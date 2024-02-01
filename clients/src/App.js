@@ -1,17 +1,20 @@
 import './App.css';
 import Closet from './components/Closet';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
+import Tracker from './components/Tracker';
 
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
 
-      <Router>
+
       <Routes>
-        <Route path="/accessories" element={<Closet/>} />
+        <Route path="/user/accessories" element={<Closet/>} />
+        <Route path="/user/level" element={<Tracker/>} />
       </Routes>
-    </Router>
+    </BrowserRouter>
 
     </div>
   );
