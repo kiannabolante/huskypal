@@ -4,17 +4,15 @@ body {
   margin: 0;
   height: 100%;
 }
-
 .oval-button {
   width: 100px;
   height: 40px;
   border-radius: 50%;
-  background-color: #160d51;
+  background-color: hsla(248, 72%, 18%, 0.867);
   color: #fff;
   font-size: 16px;
   border: none;
 }
-
 .full-page-box {
   position: absolute;
   width: 80%;
@@ -28,21 +26,17 @@ body {
   margin-left: 100px;
   overflow-y: auto;
 }
-
 hr {
   border: solid black;
   width: 1900px;
 }
-
 .box {
   height: 200px;
   width: 1000px;
   border: solid black;
   background-color: white;
   margin-bottom: 80px;
-
 }
-
 .imageSize1 {
   width: 200px;
   height: 120px;
@@ -64,7 +58,6 @@ h1{
   font-style: italic;
   font-weight: lighter;
 }
-
 h2{
   text-decoration: black;
   font-style:inherit;
