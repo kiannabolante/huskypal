@@ -1,0 +1,75 @@
+body {
+  background-color:rgba(128, 0, 128, 0.457);
+  padding:0;
+  margin: 0;
+}
+.custom-table {
+   width: 100%;
+}
+.custom-table th, .custom-table td {
+  padding: 10px;
+  border: 1px solid black;
+}
+.custom-table th {
+  background-color: white;
+  font-weight: bold;
+}
+
+.custom-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.custom-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.taller-row {
+  height: 400px;
+  width: 200px;
+}
+.displayLine {
+  display: flex;
+}
+.imageSize {
+  width: 90px;
+  height: 70px;
+
+}
+.imageSpace {
+ margin-bottom: 20px;
+
+}
+section {
+  padding-left: 50px;
+}
+h1 {
+  font-size: 70px;
+  font-weight:bolder;
+  color: rgb(79, 18, 79);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.logos {
+  position: fixed;
+  top: 0;
+  right:100px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 300px;
+
+}
+.activate {
+   height: 400px;
+    width: 700px;
+}
+.oval-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #160d51;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+}
