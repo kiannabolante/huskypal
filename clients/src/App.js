@@ -8,8 +8,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-
-
       <Routes>
         <Route path="/user/accessories" element={<Closet/>} />
         <Route path="/user/level" element={<Tracker/>} />
