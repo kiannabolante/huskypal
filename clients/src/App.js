@@ -15,12 +15,20 @@ function App() {
           </Routes>
         </Router>
       <a
-        className="App-link"
+        className="Closet-link"
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
       >
-        learn react
+        Closet
+      </a>
+      <a
+        className="Closet-link"
+        href="https://reactjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tracker
       </a>
     </div>
   );
