@@ -1,19 +1,19 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Closet from './components/Closet';
-import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Tracker from './components/Tracker';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/user/accessories" element={<Closet/>} />
-          <Route path="/user/level" element={<Tracker/>} />
-        </Routes>
-      </BrowserRouter>
+        <Router>
+          <Routes>
+            <Route path="/user/accessories" element={<Closet />} />
+            <Route path="/user/level" element={<Tracker />} />
+          </Routes>
+        </Router>
       <a
         className="App-link"
         href="https://reactjs.org"
