@@ -19,16 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        working-directory: ./clients
         run: npm install
 
-      - name: Run implemented tests
-        run: |
-          # Run only implemented tests
-          if [ "$RUN_IMPLEMENTED_TESTS" == "true" ]; then
-            npm test -- --tags=implemented
-          fi
-
-      - name: Run all tests
-        working-directory: ./clients
+      - name: Run tests
         run: npm test
