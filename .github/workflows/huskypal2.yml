@@ -19,6 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
+        working-directory: ./clients
         run: npm install
 
       - name: Run implemented tests
@@ -28,5 +29,6 @@ jobs:
             npm test -- --tags=implemented
           fi
 
-      - name: Run all tests (including unimplemented)
+      - name: Run all tests
+        working-directory: ./clients
         run: npm test
