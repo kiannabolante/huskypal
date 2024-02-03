@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Closet from './components/Closet';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
