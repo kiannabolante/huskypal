@@ -8,12 +8,19 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
-        <Route path="/user/accessories" element={<Closet/>} />
-        <Route path="/user/level" element={<Tracker/>} />
-      </Routes>
-    </BrowserRouter>
-
+        <Routes>
+          <Route path="/user/accessories" element={<Closet/>} />
+          <Route path="/user/level" element={<Tracker/>} />
+        </Routes>
+      </BrowserRouter>
+      <a
+        className="App-link"
+        href="https://reactjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        learn react
+      </a>
     </div>
   );
 }
