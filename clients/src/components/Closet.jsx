@@ -19,6 +19,7 @@ const Closet = () => {
     <div className="container" >
       <h1>Your Accessories</h1>
       <section className="displayLine">
+      <div className="custom-table-container">
         <table class="table custom-table">
           <thead>
             <tr className="taller-row">
@@ -68,6 +69,7 @@ const Closet = () => {
             </tr>
           </tbody>
         </table>
+        </div>
 
         {/* Navigation Bar */}
         <section className="logos">

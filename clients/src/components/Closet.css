@@ -17,6 +17,11 @@ body {
   font-weight: bold;
 }
 
+.custom-table-container {
+  display: flex;
+  justify-content: center;
+}
+
 .custom-table tr:nth-child(even) {
   background-color: #FFFCF2;
 }
