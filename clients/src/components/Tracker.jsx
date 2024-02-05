@@ -7,14 +7,16 @@ import deactivatedHome from "../images/nav-bar/deactivatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
 import activatedLevels from "../images/nav-bar/activatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
-import image6 from '../images/athletic-rewards/image6.png'
-import image7 from '../images/athletic-rewards/image7.png'
-import image8 from '../images/athletic-rewards/image8.png'
-import image9 from '../images/athletic-rewards/image9.png';
+import baseBallAndMit from '../images/athletic-rewards/baseBallAndMit.png'
+import tennisBall from '../images/athletic-rewards/tennisBall.png'
+import basketBall from '../images/athletic-rewards/basketBall.png'
+import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
+import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
+
 
 const Tracker = () => {
   return (
-    <div style={{ backgroundColor: "#FFFCF2" }}>
+    <div style={{ backgroundColor: "#F8F3E2" }}>
       <h1> Track Milestones </h1>
       <section >
 
@@ -25,26 +27,33 @@ const Tracker = () => {
         </h4>
         <hr />
       </section>
+
+      {/* Rewards and Levels */}
       <div className="full-page-box">
         <div className="box-content">
+        <section className=' box displayInLine'>
+            <h2>LEVEL 1</h2>
+            <div> <img src={tennisBall} alt='logo8' className='imageSize1 imageSpace1' /></div>
+          </section>
+
           <section className=' box displayInLine'>
             <h2>LEVEL 2</h2>
-            <div> <img src={image9} alt='logo8' className='imageSize1 imageSpace1' /></div>
+            <div> <img src={basketBall} alt='logo8' className='imageSize1 imageSpace1' /></div>
           </section>
 
           <section className=' box displayInLine'>
-            <h2>LEVEL 5</h2>
-            <div> <img src={image8} alt='logo8' className='imageSize1 imageSpace1' /></div>
-          </section>
-
-          <section className='box displayInLine'>
-            <h2>LEVEL 1</h2>
-            <div> <img src={image7} alt='logo7' className='imageSize1 imageSpace1' /></div>
+            <h2>LEVEL 3</h2>
+            <div> <img src={tennisRacket} alt='logo8' className='imageSize1 imageSpace1' /></div>
           </section>
 
           <section className='box displayInLine'>
             <h2>LEVEL 4</h2>
-            <div> <img src={image6} alt='logo6' className='imageSize1 imageSpace1' /></div>
+            <div> <img src={basketBallHoop} alt='logo7' className='imageSize1 imageSpace1' /></div>
+          </section>
+
+          <section className='box displayInLine'>
+            <h2>LEVEL 5</h2>
+            <div> <img src={baseBallAndMit} alt='logo6' className='imageSize1 imageSpace1' /></div>
           </section>
 
         </div>

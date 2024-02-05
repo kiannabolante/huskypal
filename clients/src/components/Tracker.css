@@ -1,5 +1,5 @@
 body {
-  background-color: #FFFCF2;
+  background-color: #F8F3E2;
   padding:0;
   margin: 0;
   height: 100%;
@@ -40,8 +40,8 @@ hr {
   margin-bottom: 80px;
 }
 .imageSize1 {
-  width: 200px;
-  height: 120px;
+  width: 250px;
+  height: 250px;
 }
 
 .levelDisplay {
@@ -71,12 +71,11 @@ hr {
   text-align: center;
   justify-content: center;
   justify-content: space-evenly;
-  padding-top: 30px;
+  padding-top: 20px;
 
 }
 h1{
   text-decoration:currentColor;
-  font-style: italic;
   font-weight: lighter;
   color: #6B5D92;
 }

@@ -7,11 +7,11 @@ import deactivatedHome from "../images/nav-bar/deactivatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import activatedCloset from "../images/nav-bar/activatedCloset.png";
-import image5 from "../images/athletic-rewards/image5.png";
-import image6 from "../images/athletic-rewards/image6.png";
-import image7 from "../images/athletic-rewards/image7.png";
-import image8 from "../images/athletic-rewards/image8.png";
-import image9 from "../images/athletic-rewards/image9.png";
+import baseBallAndMit from '../images/athletic-rewards/baseBallAndMit.png'
+import tennisBall from '../images/athletic-rewards/tennisBall.png'
+import basketBall from '../images/athletic-rewards/basketBall.png'
+import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
+import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 const Closet = () => {
   return (
@@ -23,13 +23,13 @@ const Closet = () => {
           <thead>
             <tr className="taller-row">
               <th>
-                <img src={image5} alt="activate1" className="activate" />
+                <img src={tennisBall} alt="activate1" className="activate" />
                 <button type="button" class="oval-button">
                   In-Use
                 </button>
               </th>
               <th>
-                <img src={image6} alt="activate6" className="activate" />
+                <img src={tennisRacket} alt="activate6" className="activate" />
                 <button type="button" class="oval-button">
                   In-Use
                 </button>
@@ -39,13 +39,13 @@ const Closet = () => {
           <tbody>
             <tr className="taller-row">
               <th>
-                <img src={image7} alt="activate1" className="activate" />
+                <img src={baseBallAndMit} alt="activate1" className="activate" />
                 <button type="button" class="oval-button">
                   In-Use
                 </button>
               </th>
               <th>
-                <img src={image8} alt="activate1" className="activate" />
+                <img src={basketBallHoop} alt="activate1" className="activate" />
                 <button type="button" class="oval-button">
                   In-Use
                 </button>
@@ -53,7 +53,7 @@ const Closet = () => {
             </tr>
             <tr className="taller-row">
               <th>
-                <img src={image9} alt="activate1" className="activate" />
+                <img src={basketBall} alt="activate1" className="activate" />
               </th>
 
               <td></td>
