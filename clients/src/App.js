@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Closet from './components/Closet';
 import Tracker from './components/Tracker';
+import Homepage from './components/Homepage';
 
 
 function App() {
@@ -12,9 +13,10 @@ function App() {
           <Routes>
             <Route path="/user/accessories" element={<Closet />} />
             <Route path="/user/level" element={<Tracker />} />
+            <Route path="/user/homepage" element={<Homepage />} />
           </Routes>
         </Router>
-      <a
+      {/* <a
         className="Closet-link"
         href="https://reactjs.org"
         target="_blank"
@@ -29,7 +31,7 @@ function App() {
         rel="noopener noreferrer"
       >
         Tracker
-      </a>
+      </a> */}
     </div>
   );
 }

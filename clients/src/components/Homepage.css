@@ -1,0 +1,95 @@
+.trait-container {
+    background-color: #FCFCFC;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    max-width: 350px; /*you can adjust the size of the whole box*/
+    margin: auto;
+  }
+  /*Title */
+  .trait-header {
+    color: #9381C7; 
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* the border/box of the rait-option */
+  .trait-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; 
+    border: 1px solid #9381C7;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #9381C7;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* .trait-option input[type='radio'] {
+    margin-right: 10px;
+    accent-color: #4a2ab3;
+  } */
+  
+  .trait-option label {
+    color: #FCFCFC; 
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-grow: 1;
+  }
+  
+  /* Additional styles for radio button customization */
+  .trait-option input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #FFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Style for when the radio button is checked */
+  .trait-option input[type='radio']:checked {
+    background-color: #6E5BAA; 
+    border-color: #d5d1e5;
+  }
+  
+  /* Style to create the appearance of a dot in the center of the checked radio button */
+  /* .trait-option input[type='radio']:checked::after {
+    content: '✔';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#CEC1FB;
+  } */
+  
+  button[type="submit"] {
+      background-color: #6B5D92; 
+      color: #FCFCFC;
+      border: 1px solid #CEC1FB;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #9381C7; /* Slightly darker on hover for feedback */
+    }
+  
+    /* trait */
+    .trait {
+      color: #9381C7;
+      padding: 20px;
+      margin: 10px 0; 
+      border-radius: 8px;
+      font-size: 16px;
+    }  

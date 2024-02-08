@@ -13,3 +13,10 @@ test('renders the Tracker component for /user/level route', () => {
   const trackerElement = screen.getByText(/Tracker/i);
   expect(trackerElement).toBeInTheDocument();
 });
+
+test('renders the Homepage component for /user/homepage route', () => {
+  render(<App />);
+  const homepageElement = screen.getByText(/Homepage/i);
+  expect(homepageElement).toBeInTheDocument();
+});
+
