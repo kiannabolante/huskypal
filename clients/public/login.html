@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuskyPal Login</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Grandstander', cursive;
+      overflow: hidden;
+      position: relative;
+      cursor: none;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #husky-image {
+      position: absolute;
+      margin-top: 10px;
+      margin-bottom: 285px;
+      margin-right: auto;
+      width: 15%;
+      height: 40%; /* Adjust the height as needed */
+      z-index: 0;
+    }
+
+    #login-container {
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      width: 250px;
+      text-align: center;
+      z-index: 1; /* Ensure the login container is on top of the background */
+    }
+
+    h2 {
+      color: #333;
+      font-weight: bold;
+      font-style: italic;
+      font-size: x-large;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #614caf;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #535353e7;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="background" id="background1"></div>
+  <div class="background" id="background2"></div>
+
+  <img id="husky-image" src="login-imgs/huskyAvatar.png" alt="Husky background">
+
+  <div id="login-container">
+    <h2>HuskyPal Login</h2>
+    <form action="#" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+</div>
+  </div>
+
+  <script>
+    const backgroundImages = [
+      'login-imgs/uwquadbackground.jpg', // replace with your image filenames
+      'login-imgs/uwsuzallo.jpg',
+      'login-imgs/uwredsquare.jpg',
+    ];
+
+    let currentIndex = 0;
+    let currentBackground = 1;
+
+    function changeBackground() {
+      const nextBackground = currentBackground === 1 ? 2 : 1;
+      document.getElementById(`background${nextBackground}`).style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+      document.getElementById(`background${nextBackground}`).style.opacity = '1';
+      document.getElementById(`background${currentBackground}`).style.opacity = '0';
+      currentIndex = (currentIndex + 1) % backgroundImages.length;
+      currentBackground = nextBackground;
+    }
+
+    // Change background every 5 seconds (5000 milliseconds)
+    setInterval(changeBackground, 5000);
+
+    // Initial background image
+    changeBackground();
+
+    const dogCursor = document.createElement('img');
+    dogCursor.id = 'dog-cursor';
+    dogCursor.src = 'login-imgs/huskypointer.png'; // Replace with your dog cursor image
+    dogCursor.alt = 'Dog Cursor';
+    dogCursor.style.position = 'absolute';
+    dogCursor.style.width = '50px';
+    dogCursor.style.height = 'auto';
+    dogCursor.style.pointerEvents = 'none';
+    dogCursor.style.zIndex = '2';
+
+    document.body.appendChild(dogCursor);
+
+    document.addEventListener('mousemove', (event) => {
+      const x = event.clientX - 950;
+      const y = event.clientY - 475;
+
+      // Update the position of the dog cursor
+      dogCursor.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+  </script>
+</body>
+</html>
