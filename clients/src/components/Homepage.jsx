@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Homepage.css';
+import { Link } from 'react-router-dom';
 
 function TraitBox() {
   return (
@@ -24,9 +25,11 @@ function TraitBox() {
         <label htmlFor="foodie">FOODIE</label>
       </div>
       <div>
-      <button type="submit">Submit</button>
+        <Link to="/user/todolist">
+          <button type="submit">Submit</button>
+        </Link>
       </div>
-       <div class= "trait">This trait will determine what UW challenges you're assigned!</div>
+      <div class="trait">This trait will determine what UW challenges you're assigned!</div>
     </div>
   );
 }
