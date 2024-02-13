@@ -20,8 +20,9 @@ const Tracker = () => {
       <h1> Track Milestones </h1>
       <section >
 
-        <h2>LEVEL</h2>
-        <div> <img src={activatedLevels} alt='level display' className='levelDisplay imageSpace1' /></div>
+        <h1>LEVEL</h1>
+        <div className = "trophyLevel"> <img src={activatedLevels} alt='level display' className='levelDisplay imageSpace1' /></div>
+        <div className="levelTrack">4</div>
         <h4> Complete more challenges, gain more levels,
           unlock more rewards!
         </h4>

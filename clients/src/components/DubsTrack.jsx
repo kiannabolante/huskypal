@@ -6,20 +6,26 @@ import activatedHome from "../images/nav-bar/activatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
+import huskyAvatar from "../images/huskyAvatar.png";
+import activatedLevels from "../images/nav-bar/activatedLevels.png";
 
 function DubsTrack() {
   return (
     <div className="track-container">
       <header className="header">
-        <div className="trophy-icon">🏆</div>
+        <div className="trophy-icon"> <img src={activatedLevels} alt='level display' className='homeLevel' /></div>
         <div className="level">4</div>
       </header>
       <div className="profile">
-        <div className="profile-icon">🐾</div>
-        <h1>Dubs</h1>
+        <h3>Dubs</h3>
       </div>
-      <div className="track-title">
-        <h2>Athletic Track</h2>
+      <div className = "avatar">
+      <img src={huskyAvatar} alt="husky"/>
+      </div>
+
+      <div className='floor-content'>
+       <div className="track-title">
+        <h3>Athletic Track</h3>
       </div>
       <ul className="activities">
         <li className="completed">Go on a run on the Burke Gilman Trail</li>
@@ -27,6 +33,7 @@ function DubsTrack() {
         <li>Watch an upcoming UW sports game</li>
         <li>Join a sports or fitness-related RSO</li>
       </ul>
+      </div>
 
       {/* Additional content with logos */}
       <section className="logos">

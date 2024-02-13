@@ -5,6 +5,9 @@ body {
   height: 100%;
   font-family: 'Archivo Black', sans-serif;
   color: #6B5D92;
+  display: flex; /* Added */
+  justify-content: center; /* Added */
+  align-items: center; /* Added */
 }
 .oval-button {
   width: 100px;
@@ -15,9 +18,10 @@ body {
   font-size: 16px;
   border: none;
 }
-.full-page-box {
+
+/* .full-page-box {
   position: absolute;
-  width: 80%;
+  width: 60%;
   height: 100%;
   background-color: #CEC1FB;
   display: flex;
@@ -27,21 +31,33 @@ body {
   padding-right: 100px;
   margin-left: 100px;
   overflow-y: auto;
+} */
+
+.full-page-box {
+  width: 55%;
+  height: 100%;
+  background-color: #CEC1FB;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  margin: 0 auto; /* Add this line to center the box horizontally */
+
 }
+
 hr {
   border: solid black;
   width: 1900px;
 }
+
 .box {
   height: 200px;
-  width: 1000px;
+  width: 900px;
   border: solid black;
   background-color: #FFFCF2;
   margin-bottom: 80px;
-}
-.imageSize1 {
-  width: 250px;
-  height: 250px;
 }
 
 .levelDisplay {
@@ -49,9 +65,17 @@ hr {
   height: 200px;
 }
 
-.imageSpace1{
- margin-bottom: 20px;
+.imageSize1 {
+  max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+  max-height: 100%; /* Ensures the image doesn't exceed the container's height */
+  width: auto; /* Ensures the image maintains its aspect ratio */
+  height: auto; /* Ensures the image maintains its aspect ratio */
+}
 
+.imageSpace1 {
+  width: 200px; /* Define the width of the container */
+  height: 200px; /* Define the height of the container */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
 }
 
 .logos {
@@ -68,19 +92,30 @@ hr {
 
 .displayInLine {
   display: flex;
-  text-align: center;
-  justify-content: center;
-  justify-content: space-evenly;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center items horizontally */
   padding-top: 20px;
 
 }
+
 h1{
   text-decoration:currentColor;
   font-weight: lighter;
   color: #6B5D92;
+  text-align: center;
 }
 h2{
-  text-decoration: black;
+  text-decoration: #6B5D92;
   font-style:inherit;
   font-weight: bolder;
+  margin-right: 20%; /* Adjust margin as needed */
+}
+
+.levelTrack {
+  margin-top: -150px;
+  font-size: 50px;
+}
+
+h4{
+margin-top: 100px;
 }

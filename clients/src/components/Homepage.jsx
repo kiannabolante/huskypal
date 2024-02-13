@@ -24,7 +24,10 @@ function TraitBox() {
         <label htmlFor="foodie">FOODIE</label>
       </div>
       <div>
+      <a href="/user/todolist">
       <button type="submit">Submit</button>
+      </a>
+
       </div>
        <div class= "trait">This trait will determine what UW challenges you're assigned!</div>
     </div>
