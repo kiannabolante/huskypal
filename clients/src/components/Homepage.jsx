@@ -4,7 +4,18 @@ import { Link } from 'react-router-dom';
 
 function TraitBox() {
   return (
+
     <div className="trait-container">
+
+      <section className="button-section">
+        <Link to="/register">
+          <button type="button">Register</button>
+        </Link>
+        <Link to="/login">
+          <button type="button">Login</button>
+        </Link>
+      </section>
+
       <div className="trait-header">
         Welcome! Please pick a trait for your HuskyPal:
       </div>
@@ -30,6 +41,7 @@ function TraitBox() {
         </Link>
       </div>
       <div class="trait">This trait will determine what UW challenges you're assigned!</div>
+
     </div>
   );
 }

@@ -6,6 +6,8 @@ import Closet from "./components/Closet";
 import Tracker from "./components/Tracker";
 import Homepage from "./components/Homepage";
 import DubsTrack from "./components/DubsTrack";
+import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistrationForm";
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,8 @@ function App() {
           <Route path="/user/level" element={<Tracker />} />
           <Route path="/" element={<Homepage />} />
           <Route path="/user/todolist" element={<DubsTrack />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegistrationForm />} />
         </Routes>
       </Router>
     </div>
