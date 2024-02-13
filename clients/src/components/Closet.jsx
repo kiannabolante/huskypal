@@ -74,12 +74,13 @@ const Closet = () => {
         {/* Navigation Bar */}
         <section className="logos">
           <div>
-            {" "}
-            <img
-              src={deactivatedHome}
-              alt="home button to get to home page"
-              className="imageSize imageSpace"
-            />
+          <Link to="/user/todolist">
+          <img
+            src={deactivatedHome}
+            alt="home button to get to home page"
+            className="imageSize imageSpace"
+          />
+        </Link>
           </div>
           <div>
             <Link to="/user/accessories">
