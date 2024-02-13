@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './DubsTrack.css'; // Assuming your CSS file is named DubsTrack.css
+import { useLocation } from "react-router-dom";
+
 
 import activatedHome from "../images/nav-bar/activatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
@@ -8,8 +10,17 @@ import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 import huskyAvatar from "../images/huskyAvatar.png";
 import activatedLevels from "../images/nav-bar/activatedLevels.png";
+import baseBallAndMit from '../images/athletic-rewards/baseBallAndMit.png';
+import tennisBall from '../images/athletic-rewards/tennisBall.png';
+import basketBall from '../images/athletic-rewards/basketBall.png';
+import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
+import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function DubsTrack() {
+
+    // Use useLocation hook to access location state
+    const location = useLocation();
+    const selectedItem = location.state ? location.state.selectedItem : null;
   return (
     <div className="track-container">
       <header className="header">
@@ -21,6 +32,10 @@ function DubsTrack() {
       </div>
       <div className = "avatar">
       <img src={huskyAvatar} alt="husky"/>
+      <div className="selected-item">
+                {/* Display the selected item's image if selectedItem exists */}
+                {selectedItem && <img src={selectedItem.image} alt="selected item" />}
+            </div>
       </div>
 
       <div className='floor-content'>

@@ -5,12 +5,18 @@ body {
   margin: 0;
 }
 
+h1{
+  color: #6B5D92;
+}
+
 .custom-table {
    width: 70%;
 }
 .custom-table th, .custom-table td {
   padding: 10px;
   border: 3px solid #6B5D92;
+  flex-direction: column; /* Display columns */
+  align-items: center; /* Center align items */
 }
 .custom-table th {
   background-color: #FFFCF2;
@@ -79,4 +85,9 @@ h1 {
   color: #FFFCF2;
   font-size: 16px;
   border: none;
+}
+
+
+.taller-row {
+  height: auto; /* Adjust height to auto */
 }

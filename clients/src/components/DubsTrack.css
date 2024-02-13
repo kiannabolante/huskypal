@@ -37,6 +37,8 @@
     width: 150px; /* Adjust the width of the image */
     margin-bottom: -20px;
     height: auto; /* Maintain aspect ratio */
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center; /* Center the items horizontally */
   }
 
   /* Reset margin for h1 within floor-content */
@@ -51,7 +53,13 @@
 }
 
 .avatar {
-  text-align: center; /* Center the avatar image */
+  display: flex; /* Use flexbox to align items horizontally */
+  justify-content: center; /* Center the items horizontally */
+  margin-bottom: -5px; /* Add margin at the bottom */
+}
+
+.avatar img {
+  
 }
 
 .homeLevel {
@@ -65,4 +73,8 @@
 .level {
   margin-top: -38px;
   font-size: 12px;
+}
+
+.selected-item {
+  margin-left: -15px;
 }
