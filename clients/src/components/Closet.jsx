@@ -121,12 +121,13 @@ const Closet = () => {
               </Link>
             </div>
             <div>
-              {" "}
-              <img
-                src={deactivatedPals}
-                alt="pals button to connect with others"
-                className="imageSize imageSpace"
-              />
+              <Link to="/user/pal">
+                <img
+                  src={deactivatedPals}
+                  alt="pals button to connect with others"
+                  className="imageSize imageSpace"
+                />
+              </Link>
             </div>
           </section>
         </section>
