@@ -7,12 +7,15 @@ import activatedPals from "../images/nav-bar/activatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 
+import user from "../images/Pal-images/user.png";
+import email from "../images/Pal-images/email.png";
+
 const emailNames = [
     'ramlaa@uw.edu',
+    'fana21@uw.edu',
     'kbolan@uw.edu',
     'fatuma18@uw.edu',
     'vraguram@uw.edu',
-    'fana21@uw.edu',
   ];
 
 const TrackPal = () => {
@@ -27,8 +30,12 @@ const TrackPal = () => {
       {/* List of Pals */}
       <div className="emailListContainer">
         <ul className="emailList">
-          {emailNames.map((email, index) => (
-            <li key={index} className="emailItem">{email}</li>
+          {emailNames.map((emailAddress, index) => (
+            <li key={index} className="emailItem">
+                <img src={user} alt="User Icon" className="icon userIcon" />
+                {emailAddress}
+                <img src={email} alt="Email Icon" className="icon emailIcon" />
+            </li>
           ))}
         </ul>
       </div>
