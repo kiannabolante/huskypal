@@ -39,15 +39,16 @@ function DubsTrack() {
       </div>
 
       <div className='floor-content'>
-       <div className="track-title">
-        <h3>Athletic Track</h3>
-      </div>
-      <ul className="activities">
-        <li className="completed">Go on a run on the Burke Gilman Trail</li>
-        <li>Attend Friday night skating at the IMA</li>
-        <li>Watch an upcoming UW sports game</li>
-        <li>Join a sports or fitness-related RSO</li>
-      </ul>
+        <div className="track-title">
+          <h3>Athletic Track</h3>
+        </div>
+        <ul className="activities">
+          {/* Added checkboxes before each list item */}
+          <li className="completed"><input type="checkbox"/> Go on a run on the Burke Gilman Trail</li>
+          <li><input type="checkbox" /> Attend Friday night skating at the IMA</li>
+          <li><input type="checkbox" /> Watch an upcoming UW sports game</li>
+          <li><input type="checkbox" /> Join a sports or fitness-related RSO</li>
+        </ul>
       </div>
 
       {/* Additional content with logos */}

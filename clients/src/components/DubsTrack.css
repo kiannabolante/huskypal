@@ -1,15 +1,14 @@
-
-
 /* Make sure the track-container takes up the full height of the viewport */
 .track-container {
   min-height: 100%;
 }
 
-/* .track-container {
+/* Make sure the track-container or to make it more wild */
+.track-container {
     background-color: #F8F3E2;
-    /* width: 350px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  /* } */
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
  /* Ensure the floor-content spans the full width */
 .floor-content {
@@ -24,6 +23,7 @@
     padding: 0;
   }
 
+  /* make the box board */
   .activities li {
     background-color: #9381C7;
     padding: 10px;
@@ -58,12 +58,8 @@
   margin-bottom: -5px; /* Add margin at the bottom */
 }
 
-.avatar img {
-  
-}
-
 .homeLevel {
-  max-width: 10%; /* Ensures the image doesn't exceed the container's width */
+  max-width: 10%; 
   max-height: 10%; /* Ensures the image doesn't exceed the container's height */
   width: auto; /* Ensures the image maintains its aspect ratio */
   height: auto; /* Ensures the image maintains its aspect ratio */
@@ -77,4 +73,58 @@
 
 .selected-item {
   margin-left: -15px;
+}
+
+/* Styles for the activities list */
+.activities {
+  list-style-type: none; /* Removes default list styling */
+  padding-left: 0; /* Removes default padding */
+}
+
+/* Styles for each activity item */
+.activities li {
+  display: flex; /* Use flexbox for aligning checkbox and text */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Add some space between list items */
+  background-color: #9381C7; /* Background color for list item */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside each list item */
+  border-radius: 5px; /* Rounded corners for the list items */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Styles for the checkboxes */
+.activities li input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and text */
+  cursor: pointer; /* Changes cursor to pointer on hover over the checkbox */
+}
+
+/* Styles for the activities list */
+.activities {
+  list-style-type: none; /* Removes default list styling */
+  padding-left: 0; /* Removes default padding */
+}
+
+/* Styles for each activity item */
+.activities li {
+  display: flex; /* Use flexbox for aligning checkbox and text */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Add some space between list items */
+  background-color: #9381C7; /* Background color for list item */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside each list item */
+  border-radius: 5px; /* Rounded corners for the list items */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Styles for the checkboxes */
+.activities li input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and text */
+  width: 70px;
+  height: 50px;
+}
+
+/* Adjusting checkbox appearance when checked */
+.activities li input[type="checkbox"]:checked + label {
+  text-decoration: line-through; /* Optional: if you use labels next to checkboxes */
 }
