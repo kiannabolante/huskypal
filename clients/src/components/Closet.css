@@ -1,27 +1,23 @@
 body {
   background-color: #CEC1FB;
   font-family: 'Archivo Black', sans-serif;
-  padding: 0;
+  padding:0;
   margin: 0;
 }
 
-h1 {
+h1{
   color: #6B5D92;
-  font-size: 40px; /* Adjust font size */
 }
 
 .custom-table {
-  width: 60%; /* Decrease table width */
+   width: 70%;
 }
-
-.custom-table th,
-.custom-table td {
-  padding: 5px; /* Reduce padding */
-  border: 2px solid #6B5D92;
+.custom-table th, .custom-table td {
+  padding: 10px;
+  border: 3px solid #6B5D92;
   flex-direction: column; /* Display columns */
   align-items: center; /* Center align items */
 }
-
 .custom-table th {
   background-color: #FFFCF2;
   font-weight: bold;
@@ -40,50 +36,58 @@ h1 {
   background-color: #FFFCF2;
 }
 
+.taller-row {
+  height: 400px;
+  width: 200px;
+}
+.displayLine {
+  display: flex;
+}
 .imageSize {
-  width: 50px; /* Adjust image size */
-  height: 50px; /* Adjust image size */
-  margin-bottom: 10px; /* Reduce margin */
-}
+  width: 70px;
+  height: 70px;
 
+}
 .imageSpace {
-  margin-bottom: 10px; /* Reduce margin */
-}
+ margin-bottom: 20px;
 
+}
 section {
-  padding-left: 20px; /* Adjust padding */
+  padding-left: 50px;
 }
-
 h1 {
-  font-size: 40px; /* Adjust font size */
-  font-weight: bold;
+  font-size: 70px;
+  font-weight:bolder;
   color: rgb(79, 18, 79);
-  padding-top: 30px; /* Adjust padding */
-  padding-bottom: 30px; /* Adjust padding */
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
-
 .logos {
   position: fixed;
-  top: 20px; /* Adjust top position */
-  right: 20px; /* Adjust right position */
-  left: auto; /* Adjust left position */
+  top: 0;
+  right:100px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-}
+  padding-top: 300px;
 
+}
 .activate {
-  height: 200px; /* Adjust image size */
-  width: 200px; /* Adjust image size */
+   height: 400px;
+    width: 400px;
 }
-
 .oval-button {
-  width: 80px; /* Adjust button size */
-  height: 30px; /* Adjust button size */
+  width: 100px;
+  height: 40px;
   border-radius: 50%;
   background-color: #6B5D92;
   color: #FFFCF2;
-  font-size: 14px; /* Adjust font size */
+  font-size: 16px;
   border: none;
-  margin-bottom: 5px; /* Reduce margin */
+}
+
+
+.taller-row {
+  height: auto; /* Adjust height to auto */
 }
