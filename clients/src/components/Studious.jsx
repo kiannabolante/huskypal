@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './DubsTrack.css'; // Assuming your CSS file is named DubsTrack.css
+import './Creative.css'
 import { useLocation } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ import basketBall from '../images/athletic-rewards/basketBall.png';
 import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
-function DubsTrack() {
+function Studious() {
 
     // Use useLocation hook to access location state
     const location = useLocation();
@@ -40,14 +40,14 @@ function DubsTrack() {
 
       <div className='floor-content'>
         <div className="track-title">
-          <h3>Athletic Track</h3>
+          <h3>Studious Track</h3>
         </div>
         <ul className="activities">
           {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>Go on a run on the Burke Gilman Trail</li>
-          <li><input type="checkbox" />Attend Friday night skating at the IMA</li>
-          <li><input type="checkbox" />Watch an upcoming UW sports game</li>
-          <li><input type="checkbox" />Join a sports or fitness-related RSO</li>
+          <li className="completed"><input type="checkbox"/>CLUE Study Center Quest </li>
+          <li><input type="checkbox" />Weekly Study Group Challenge </li>
+          <li><input type="checkbox" />Lecture Attendance Streak </li>
+          <li><input type="checkbox" />Research Symposium</li>
         </ul>
       </div>
 
@@ -95,4 +95,4 @@ function DubsTrack() {
   );
 }
 
-export default DubsTrack;
+export default Studious;

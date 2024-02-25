@@ -19,3 +19,23 @@ test('renders the DubsTrack component for /user/homepage route', () => {
   const homepageElement = screen.getByText(/Dubstrack/i);
   expect(homepageElement).toBeInTheDocument();
 });
+
+test('renders the Creative component for /creative route', () => {
+  render(<App />);
+  const homepageElement = screen.getByText(/Creative/i);
+  expect(homepageElement).toBeInTheDocument();
+});
+
+test('renders the Foodie component for /foodieroute', () => {
+  render(<App />);
+  const homepageElement = screen.getByText(/Foodie/i);
+  expect(homepageElement).toBeInTheDocument();
+});
+
+test('renders the Studious component for /studious route', () => {
+  render(<App />);
+  const homepageElement = screen.getByText(/Studious/i);
+  expect(homepageElement).toBeInTheDocument();
+});
+
+

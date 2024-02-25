@@ -8,6 +8,10 @@ import Homepage from "./components/Homepage";
 import DubsTrack from "./components/DubsTrack";
 import LoginForm from "./components/LoginForm";
 import RegistrationForm from "./components/RegistrationForm";
+import Creative from "./components/Creative";
+import Studious from "./components/Studious";
+import Foodie from "./components/Foodie";
+
 function App() {
   return (
     <div className="App">
@@ -20,6 +24,9 @@ function App() {
           <Route path="/user/todolist" element={<DubsTrack />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegistrationForm />} />
+          <Route path="/creative" element={<Creative />} />
+          <Route path="/studious" element={<Studious/>} />
+          <Route path="/foodie" element={<Foodie />} />
         </Routes>
       </Router>
     </div>

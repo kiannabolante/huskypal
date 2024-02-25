@@ -43,7 +43,7 @@ const TrackPal = () => {
       {/* Navigation Bar */}
       <section className="logos">
         <div>
-        <Link to="/user/todolist">
+        <Link to="/">
                 <img
                   src={deactivatedHome}
                   alt="home button to get to home page"

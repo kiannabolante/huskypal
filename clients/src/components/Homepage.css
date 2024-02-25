@@ -1,11 +1,14 @@
 .trait-container {
-  background-color: #fcfcfc;
+  background-color: #FCFCFC;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   padding: 20px;
-  max-width: 350px; /*you can adjust the size of the whole box*/
+  max-width: 350px;
   margin: auto;
 }
+
+
+
 /*Title */
 .trait-header {
   color: #9381c7;
@@ -19,7 +22,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  border: 1px solid #9381c7;
+  border: 1px solid  #CEC1FB;
   border-radius: 10px;
   padding: 10px;
   background-color: #9381c7;
@@ -38,7 +41,7 @@
   flex-grow: 1;
 }
 
-/* Additional styles for radio button customization */
+/* Additional styles for radio button customization or customization the checklist box*/
 .trait-option input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -59,18 +62,6 @@
   border-color: #d5d1e5;
 }
 
-/* Style to create the appearance of a dot in the center of the checked radio button */
-/* .trait-option input[type='radio']:checked::after {
-    content: '✔';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background:#CEC1FB;
-  } */
-
 button[type="submit"] {
   background-color: #6b5d92;
   color: #fcfcfc;
@@ -81,19 +72,44 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
+/* Slightly darker on hover for feedback */
 button[type="submit"]:hover {
-  background-color: #9381c7; /* Slightly darker on hover for feedback */
+  background-color: #9381c7;
 }
-/* trait */
+/* this code is trait or adjust of the width of the homepage */
 .trait {
   color: #9381c7;
   padding: 20px;
-  margin: 10px 0;
+  margin: 10px 0; 
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
+/* this code just shift the register and login button */
 .button-section {
   display: flex;
   gap: 10px;
+}
+
+
+/* Existing styles */
+.overlay {
+  position: fixed; /* Or absolute, depending on your layout */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above all other content */
+}
+
+.overlay-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center the text inside the overlay content */
 }

@@ -1,6 +1,7 @@
 /* Make sure the track-container takes up the full height of the viewport */
 .track-container {
   min-height: 100%;
+  min-width: 100%; /* adjust the size of the page */
 }
 
 /* Make sure the track-container or to make it more wild */
@@ -74,6 +75,7 @@
 .selected-item {
   margin-left: -15px;
 }
+ */
 
 /* Styles for the activities list */
 .activities {
