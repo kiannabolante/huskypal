@@ -44,10 +44,11 @@ function Studious() {
         </div>
         <ul className="activities">
           {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>CLUE Study Center Quest </li>
-          <li><input type="checkbox" />Weekly Study Group Challenge </li>
-          <li><input type="checkbox" />Lecture Attendance Streak </li>
-          <li><input type="checkbox" />Research Symposium</li>
+          <li className="completed"><input type="checkbox"/>CLUE Study Center Quest: Attend CLUE study center during designated hours throughout the quarter</li>
+          <li><input type="checkbox" />Office Hour Mastery: Attend office hours for at least one of your courses every week for a semester</li>
+          <li><input type="checkbox" />Weekly Study Group Challenge: Form a study group with classmates and commit to meeting regularly to review course material and prepare for exams</li>
+          <li><input type="checkbox" />Lecture Attendance Streak: Attend all lectures for a selected course for an entire week without missing a single session</li>
+          <li><input type="checkbox" />Research Symposium: Participate in or attend a research symposium on campus, showcasing student and faculty research across various disciplines</li>
         </ul>
       </div>
 

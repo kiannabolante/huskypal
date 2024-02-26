@@ -45,9 +45,10 @@ function DubsTrack() {
         <ul className="activities">
           {/* Added checkboxes before each list item */}
           <li className="completed"><input type="checkbox"/>Go on a run on the Burke Gilman Trail</li>
-          <li><input type="checkbox" />Attend Friday night skating at the IMA</li>
-          <li><input type="checkbox" />Watch an upcoming UW sports game</li>
           <li><input type="checkbox" />Join a sports or fitness-related RSO</li>
+          <li><input type="checkbox" />Friday night skating at the IMA:  Form a team and participate in a relay race during Friday night skating at the IMA</li>
+          <li><input type="checkbox" />UW Sports Game Challenge: Attend at least three different UW sports games in a semester</li>
+          <li><input type="checkbox" />Attend Adventure Club Expedition: Participate in activities such as hiking, rock climbing, kayaking, or camping</li>
         </ul>
       </div>
 

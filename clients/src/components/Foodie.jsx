@@ -44,10 +44,11 @@ function Foodie() {
         </div>
         <ul className="activities">
           {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>Campus Cuisine Tour </li>
-          <li><input type="checkbox" />Cultural Cooking Class </li>
-          <li><input type="checkbox" />Food Truck Frenzy </li>
-          <li><input type="checkbox" />Farmers Market Challenge </li>
+          <li className="completed"><input type="checkbox"/>Campus Cuisine Tour: Explore different dining options on campus and rate your favorite meals from each location</li>
+          <li><input type="checkbox" />Cultural Cooking Class: Attend a cooking class focused on a specific cuisine or cultural dish, hosted by a student organization or local chef</li>
+          <li><input type="checkbox" />Food Truck Frenzy: Sample offerings from various food trucks parked on campus during a designated food truck event</li>
+          <li><input type="checkbox" />Farmers Market Challenge: Create a meal using only ingredients purchased from the UW Farmers Market, showcasing local and sustainable produce</li>
+          <li><input type="checkbox" />Culinary Club Cuisine Exploration: Attend a cooking demonstration or tasting event hosted by a culinary-focused RSO on campus</li>
         </ul>
       </div>
 

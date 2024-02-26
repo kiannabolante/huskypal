@@ -44,10 +44,11 @@ function Creative() {
         </div>
         <ul className="activities">
           {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/> UW Photography Challenge </li>
-          <li><input type="checkbox" /> Artistic Exploration</li>
-          <li><input type="checkbox" /> UW Campus Sketchbook Project</li>
-          <li><input type="checkbox" /> RSO Showcase Experience</li>
+          <li className="completed"><input type="checkbox"/> UW Photography Challenge: Capture and share a series of photographs that depict the diversity and beauty of UW campus life</li>
+          <li><input type="checkbox" />Artistic Exploration: Create a piece of art inspired by a specific location on campus or a notable UW landmark</li>
+          <li><input type="checkbox" />UW Campus Sketchbook Project: Create a sketchbook dedicated to capturing the essence of UW campus life through drawings, doodles, and sketches</li>
+          <li><input type="checkbox" />RSO Showcase Experience: Attend a showcase such as a dance recital, theater production, or musical concert</li>
+          <li><input type="checkbox" />Spoken Word Night: Participate in a spoken word poetry event at a local café or on campus </li>
         </ul>
       </div>
 
