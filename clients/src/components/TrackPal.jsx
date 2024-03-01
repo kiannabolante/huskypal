@@ -1,86 +1,75 @@
-import React from 'react';
-import "./TrackPal.css";
-import { Link } from "react-router-dom";
 
-import deactivatedHome from "../images/nav-bar/deactivatedHome.png";
-import activatedPals from "../images/nav-bar/activatedPals.png";
-import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
-import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 
+
+// export default TrackPal
+
+import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+
+import axios from "axios";
 import user from "../images/Pal-images/user.png";
 import email from "../images/Pal-images/email.png";
+import UserContext from '../contexts/UserContext';
 
-const emailNames = [
-    'ramlaa@uw.edu',
-    'fana21@uw.edu',
-    'kbolan@uw.edu',
-    'fatuma18@uw.edu',
-    'vraguram@uw.edu',
-  ];
 
 const TrackPal = () => {
+  const navigate = useNavigate();
+
+  const { loggedInUser } = useContext(UserContext)
+  // if the user not logged in send them  back to home
+  useEffect(() => {
+    if (!loggedInUser._id) {
+      navigate("/")
+    }
+  }, [])
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/users")
+      .then((response) => {
+        setUsers(response.data.users);
+      })
+      .catch((error) => {
+        console.error("Error fetching users:", error);
+      });
+  }, []);
+
   return (
-    <div style={{ backgroundColor: "#F8F3E2" }}>
+    <div>
+
       <h1> Track Pals </h1>
       <section>
         <h4> Connect with people completing the same track as you! </h4>
         <hr />
       </section>
-
-      {/* List of Pals */}
       <div className="emailListContainer">
         <ul className="emailList">
-          {emailNames.map((emailAddress, index) => (
-            <li key={index} className="emailItem">
+          {users.map((oneUser) => {
+            console.log("Instagram:", oneUser.instagram);
+            return (
+              <li key={oneUser._id} className="emailItem">
                 <img src={user} alt="User Icon" className="icon userIcon" />
-                {emailAddress}
+                <span>
+                  <div style={{ color: "purple", textDecoration: "underline" }}>
+                    User First Name: <span style={{ margin: "5px" }}>{oneUser.firstName}</span>
+                  </div>
+                  <a
+                    href={`https://www.instagram.com/${oneUser.instagram}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "blue", textDecoration: "underline" }}
+                  >
+                    <span style={{ color: "purple", margin: "20px" }}>User Instagram:</span> {oneUser.instagram}
+                  </a>
+                </span>
                 <img src={email} alt="Email Icon" className="icon emailIcon" />
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </div>
-
-      {/* Navigation Bar */}
-      <section className="logos">
-        <div>
-        <Link to="/">
-                <img
-                  src={deactivatedHome}
-                  alt="home button to get to home page"
-                  className="imageSize imageSpace"
-                />
-              </Link>
-        </div>
-        <div>
-          <Link to="/user/accessories">
-            <img
-              src={deactivatedCloset}
-              alt="closet button to see accessories"
-              className="imageSize imageSpace"
-            />
-          </Link>
-        </div>
-        <div>
-          <Link to="/user/level">
-            <img
-              src={deactivatedLevels}
-              alt="levels button to see progress and rewards"
-              className="imageSize imageSpace"
-            />
-          </Link>
-        </div>
-        <div>
-          <Link to="/user/pal">
-            <img
-              src={activatedPals}
-              alt="pal button to connect with others"
-              className="imageSize imageSpace"
-            />
-          </Link>
-        </div>
-      </section>
     </div>
   );
 };
-
 export default TrackPal;

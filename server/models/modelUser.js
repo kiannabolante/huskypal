@@ -1,48 +1,76 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
 
-const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: [true, "Username is required"],
-    unique: [true, "Username already exists"],
-    trim: true,
-    minlength: [3, "Username must be at least 3 characters long"],
-    maxlength: [30, "Username cannot more than  30 characters"],
-    match: [
-      /^[a-zA-Z0-9_-]+$/,
-      "Username can only contain alphanumeric characters, underscores, and hyphens",
-    ],
+const UserSchema = new Schema(
+  {
+    firstName: {
+      type: String,
+      required: [true, "First name is required"],
+      minlength: [2, "First name must be 2 or more characters"],
+    },
+    lastName: {
+      type: String,
+      required: [true, "Last name is required"],
+      minlength: [2, "Last name must be 2 or more characters"],
+    },
+    username: {
+      type: String,
+      required: [true, "Username is required"],
+      unique: true,
+      minlength: [4, "Username must be 4 or more characters"],
+    },
+    instagram: {
+      type: String,
+      required: [true, "Instagram is required"],
+    },
+
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      validate: [
+        {
+          validator: (val) => {
+            return /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val);
+          },
+          message: "Email must be in proper format",
+        },
+        {
+          validator: async (val) => {
+            let foundUser = await mongoose.models.User.findOne({ email: val });
+            return !foundUser;
+          },
+          message: "Someone already registered with this email",
+        },
+      ],
+    },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+      minlength: [8, "Password must be 8 or more characters"],
+    },
   },
-  password: {
-    type: String,
-    required: [true, "Password is required"],
-    minlength: [8, "Password must be at least 8 characters long"],
-  },
-});
+  { timestamps: true }
+);
 
-userSchema.pre("save", async function (next) {
-  try {
-    const user = this;
+// check if the password is matching
+UserSchema.virtual("confirmPassword")
+  .get(function () {
+    return this._confirmPassword;
+  })
+  .set(function (value) {
+    this._confirmPassword = value;
+  });
 
-    // Only hash the password if it's modified or new
-    if (!user.isModified("password")) return next();
-
-    // Generate a salt
-    const salt = await bcrypt.genSalt(10);
-
-    // Hash the password along with the new salt
-    const hashedPassword = await bcrypt.hash(user.password, salt);
-
-    // Override the plaintext password with the hashed one
-    user.password = hashedPassword;
-
-    next();
-  } catch (error) {
-    next(error);
+UserSchema.pre("validate", async function (next) {
+  // Hash the password before saving to the database
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 10);
+    console.log("Data before saving to the database:", this.toObject());
   }
+
+  next();
 });
 
-const User = mongoose.model("User", userSchema);
-
+const User = mongoose.model("User", UserSchema);
 module.exports = User;

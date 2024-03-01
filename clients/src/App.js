@@ -1,5 +1,6 @@
-import React from "react";
 import "./App.css";
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TrackPal from "./components/TrackPal";
 import Closet from "./components/Closet";
@@ -11,24 +12,43 @@ import RegistrationForm from "./components/RegistrationForm";
 import Creative from "./components/Creative";
 import Studious from "./components/Studious";
 import Foodie from "./components/Foodie";
+import UserContext from "./contexts/UserContext.jsx";
+import Header from "./components/Header.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import DisplayAll from "./components/DisplayAll.js";
 
 function App() {
+  // hold user information
+  const [loggedInUser, setLoggedInUser] = useState({});
+  // SAVE THE USER INFORMATION THAT WE GET FROM THE LOGGED IN USER
+  const saveLoggedInUser = (userData) => {
+    // clear the password, since we have logged in
+    const userObj = { ...userData, password: "" };
+    setLoggedInUser(userObj);
+    console.log("User logged in :", userObj);
+  };
+
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/user/pal" element={<TrackPal />} />
-          <Route path="/user/accessories" element={<Closet />} />
-          <Route path="/user/level" element={<Tracker />} />
-          <Route path="/" element={<Homepage />} />
-          <Route path="/user/todolist" element={<DubsTrack />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegistrationForm />} />
-          <Route path="/creative" element={<Creative />} />
-          <Route path="/studious" element={<Studious/>} />
-          <Route path="/foodie" element={<Foodie />} />
-        </Routes>
-      </Router>
+      <UserContext.Provider value={{ loggedInUser, saveLoggedInUser }}>
+        <Router>
+          <Header handleLogout={() => setLoggedInUser({})} />
+          <Routes>
+            <Route path="/user/pal" element={<TrackPal />} />
+            <Route path="/user/accessories" element={<Closet />} />
+            <Route path="/user/level" element={<Tracker />} />
+            <Route path="/home" element={<Homepage />} />
+            <Route path="/user/todolist" element={<DubsTrack />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/" element={<RegistrationForm />} />
+            <Route path="/creative" element={<Creative />} />
+            <Route path="/studious" element={<Studious />} />
+            <Route path="/foodie" element={<Foodie />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/alluser" element={<DisplayAll />} />
+          </Routes>
+        </Router>
+      </UserContext.Provider>
     </div>
   );
 }

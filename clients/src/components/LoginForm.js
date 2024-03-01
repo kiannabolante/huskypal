@@ -1,58 +1,115 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import UserContext from "../contexts/UserContext";
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const { saveLoggedInUser } = useContext(UserContext);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [formDataError, setFormDataError] = useState({});
+  const [loginError, setLoginError] = useState(""); // New state for login error
+  const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        console.log("Login successful");
-      } else {
-        console.error("Login failed");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-    }
+  const changeHandle = (e) => {
+    let fieldName = e.target.name;
+    let newValue = e.target.value;
+    setFormData({ ...formData, [fieldName]: newValue });
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    // Reset form errors and login error
+    setFormDataError({});
+    setLoginError("");
+
+    // Client-side validation
+    if (!formData.email.trim()) {
+      setFormDataError((prevErrors) => ({
+        ...prevErrors,
+        email: { message: "Email is required" },
+      }));
+      return;
+    }
+
+    if (!formData.password.trim()) {
+      setFormDataError((prevErrors) => ({
+        ...prevErrors,
+        password: { message: "Password is required" },
+      }));
+      return;
+    }
+
+    axios
+      .post(`http://localhost:8000/api/login`, formData, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log("Response from server:", res);
+        saveLoggedInUser(res.data);
+        console.log("Navigating to /dashboard");
+        navigate("/user/todolist");
+      })
+      .catch((err) => {
+        console.log("Error from server:", err);
+
+        if (err.response && err.response.data) {
+          console.log("Server response data:", err.response.data);
+          setLoginError(
+            err.response.data.message || "Invalid login credentials"
+          );
+        }
+
+        if (err.response && err.response.data && err.response.data.errors) {
+          setFormDataError(err.response.data.errors);
+        }
+      });
+  };
   return (
-    <div>
-      <h2>Login</h2>
-      <form>
-        <label>
-          Username:
+    <div className="login-form">
+      <h1>Login Form</h1>
+      <p>
+        New to this app? Then <Link to="/">Register</Link>
+      </p>
+      <form action="" className="col-med-4 offset" onSubmit={handleLoginSubmit}>
+        <div className="form-group">
+          {formDataError.email && (
+            <p style={{ color: "red" }}>{formDataError.email.message}</p>
+          )}
+          <label htmlFor="email"> Email Address: </label>
           <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            className="form-control"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={changeHandle}
           />
-        </label>
-        <br />
-        <label>
-          {" "}
-          Password:{" "}
+        </div>
+        <div className="form-group">
+          {formDataError.password && (
+            <p style={{ color: "red" }}>{formDataError.password.message}</p>
+          )}
+          <label htmlFor="password">Password:</label>
           <input
+            className="form-control"
+            name="password"
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={changeHandle}
           />
-        </label>
-        <br />
-        <Link to="/">
-          <button type="button" onClick={handleLogin}>
-            Login
-          </button>
-        </Link>
+        </div>
+
+        {loginError && <p style={{ color: "red" }}>{loginError}</p>}
+
+        <button type="submit" className="btn btn-primary">
+          {" "}
+          Login
+        </button>
       </form>
     </div>
   );
