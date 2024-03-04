@@ -65,10 +65,15 @@ UserSchema.virtual("confirmPassword")
 UserSchema.pre("validate", async function (next) {
   // Hash the password before saving to the database
   if (this.isModified("password")) {
-    this.password = await bcrypt.hash(this.password, 10);
-    console.log("Data before saving to the database:", this.toObject());
+    try {
+      const hashedPassword = await bcrypt.hash(this.password, 10);
+      this.password = hashedPassword;
+      console.log("Password hashed before saving:", hashedPassword);
+    } catch (error) {
+      console.error("Error hashing the password:", error);
+      return next(error);
+    }
   }
-
   next();
 });
 

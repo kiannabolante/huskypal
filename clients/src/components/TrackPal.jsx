@@ -18,10 +18,15 @@ const TrackPal = () => {
   const { loggedInUser } = useContext(UserContext)
   // if the user not logged in send them  back to home
   useEffect(() => {
+    console.log("TrackPal component mounted");
+    console.log("loggedInUser:", loggedInUser);
+
     if (!loggedInUser._id) {
-      navigate("/")
+      console.log("User not logged in, navigating to /");
+      navigate("/");
     }
-  }, [])
+  }, []);
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {

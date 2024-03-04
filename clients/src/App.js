@@ -15,7 +15,6 @@ import Foodie from "./components/Foodie";
 import UserContext from "./contexts/UserContext.jsx";
 import Header from "./components/Header.jsx";
 import Dashboard from "./components/Dashboard.jsx";
-import DisplayAll from "./components/DisplayAll.js";
 
 function App() {
   // hold user information
@@ -33,6 +32,7 @@ function App() {
       <UserContext.Provider value={{ loggedInUser, saveLoggedInUser }}>
         <Router>
           <Header handleLogout={() => setLoggedInUser({})} />
+          <Header handleLogout={() => setLoggedInUser({})} />
           <Routes>
             <Route path="/user/pal" element={<TrackPal />} />
             <Route path="/user/accessories" element={<Closet />} />
@@ -45,7 +45,6 @@ function App() {
             <Route path="/studious" element={<Studious />} />
             <Route path="/foodie" element={<Foodie />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/alluser" element={<DisplayAll />} />
           </Routes>
         </Router>
       </UserContext.Provider>

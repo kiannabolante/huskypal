@@ -18,9 +18,10 @@ import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function DubsTrack() {
 
-    // Use useLocation hook to access location state
-    const location = useLocation();
-    const selectedItem = location.state ? location.state.selectedItem : null;
+
+  // Use useLocation hook to access location state
+  const location = useLocation();
+  const selectedItem = location.state ? location.state.selectedItem : null;
   return (
     <div className="track-container">
       <header className="header">
@@ -30,12 +31,12 @@ function DubsTrack() {
       <div className="profile">
         <h3>Dubs</h3>
       </div>
-      <div className = "avatar">
-      <img src={huskyAvatar} alt="husky"/>
-      <div className="selected-item">
-                {/* Display the selected item's image if selectedItem exists */}
-                {selectedItem && <img src={selectedItem.image} alt="selected item" />}
-            </div>
+      <div className="avatar">
+        <img src={huskyAvatar} alt="husky" />
+        <div className="selected-item">
+          {/* Display the selected item's image if selectedItem exists */}
+          {selectedItem && <img src={selectedItem.image} alt="selected item" />}
+        </div>
       </div>
 
       <div className='floor-content'>
@@ -44,7 +45,7 @@ function DubsTrack() {
         </div>
         <ul className="activities">
           {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>Go on a run on the Burke Gilman Trail</li>
+          <li className="completed"><input type="checkbox" />Go on a run on the Burke Gilman Trail</li>
           <li><input type="checkbox" />Join a sports or fitness-related RSO</li>
           <li><input type="checkbox" />Friday night skating at the IMA:  Form a team and participate in a relay race during Friday night skating at the IMA</li>
           <li><input type="checkbox" />UW Sports Game Challenge: Attend at least three different UW sports games in a semester</li>
@@ -55,13 +56,13 @@ function DubsTrack() {
       {/* Additional content with logos */}
       <section className="logos">
         <div>
-        <Link to="/">
-          <img
-            src={activatedHome}
-            alt="home button to get to home page"
-            className="imageSize imageSpace"
-          />
-        </Link>
+          <Link to="/">
+            <img
+              src={activatedHome}
+              alt="home button to get to home page"
+              className="imageSize imageSpace"
+            />
+          </Link>
         </div>
         <div>
           <Link to="/user/accessories">
@@ -82,13 +83,13 @@ function DubsTrack() {
           </Link>
         </div>
         <div>
-        <Link to="/user/pal">
-                <img
-                  src={deactivatedPals}
-                  alt="pals button to connect with others"
-                  className="imageSize imageSpace"
-                />
-              </Link>
+          <Link to="/user/pal">
+            <img
+              src={deactivatedPals}
+              alt="pals button to connect with others"
+              className="imageSize imageSpace"
+            />
+          </Link>
         </div>
       </section>
     </div>

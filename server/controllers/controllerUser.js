@@ -88,66 +88,45 @@ const registerNewUser = async (req, res) => {
       .json({ error: "Internal server error during registration." });
   }
 };
+
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+    const possibleUser = await User.findOne({ email });
 
-    // Check if email is present and valid
-    if (!email || typeof email !== "string" || password === undefined) {
-      console.log("Invalid email or password format");
-      return res.status(400).json({ message: "Invalid email or password" });
-    }
-
-    // Convert entered email to uppercase for case-insensitive query
-    const enteredEmail = email.toUpperCase();
-
-    console.log("Entered Email:", enteredEmail);
-
-    // Find the user using the case-insensitive query
-    const user = await User.findOne({
-      email: { $regex: new RegExp(`^${enteredEmail}$`, "i") },
-    });
-
-    console.log("Retrieved User:", user);
-
-    if (!user) {
-      console.log(
-        "Invalid login credentials - User not found for email:",
-        enteredEmail
-      );
+    if (!possibleUser) {
+      console.log("Invalid login credentials - User not found");
       return res.status(400).json({ message: "Invalid login credentials" });
     }
 
-    // Use bcrypt.compare with trimmed password
     const isPasswordMatch = await bcrypt.compare(
-      password.trim(),
-      user.password
+      password,
+      possibleUser.password
+    );
+    if (!possibleUser) {
+      console.log("Invalid login credentials - User not found");
+      return res.status(400).json({ message: "Invalid login credentials" });
+    }
+
+    // Password matches, generate and send token
+    const userToken = jwt.sign(
+      {
+        id: possibleUser._id,
+      },
+      secret_key,
+      { expiresIn: "2h" }
     );
 
-    console.log("Entered Password:", password);
-    console.log("Hashed Password in DB:", user.password);
-    console.log("isPasswordMatch:", isPasswordMatch);
+    console.log("User authenticated - Token generated:", userToken);
 
-    if (isPasswordMatch) {
-      const userToken = jwt.sign({ id: user._id }, secret_key, {
-        expiresIn: "2h",
-      });
-
-      console.log("User authenticated - Token generated:", userToken);
-
-      return res
-        .cookie("usertoken", userToken, { httpOnly: true, expiresIn: "2h" })
-        .status(200)
-        .json({ message: "Login successful", user });
-    } else {
-      console.log("Invalid login credentials - Incorrect password");
-      return res.status(400).json({ message: "Invalid login credentials" });
-    }
+    // Set the user token as a cookie
+    res
+      .cookie("usertoken", userToken, { httpOnly: true, expiresIn: "2h" })
+      .status(200)
+      .json({ message: "Login successful", user: possibleUser });
   } catch (err) {
     console.error("Error during login:", err);
-    return res
-      .status(500)
-      .json({ error: "Internal server error during login." });
+    res.status(500).json({ error: "Internal server error during login." });
   }
 };
 
