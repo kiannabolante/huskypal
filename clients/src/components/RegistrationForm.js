@@ -106,17 +106,16 @@ const RegistrationForm = () => {
 
   return (
     <div className="registration-form">
-      <h3> Welcome to our website </h3>
-      <h5>Register</h5>
+      <h3> Please Register to HuskyPal </h3>
       <p>
-        Already registered ? Then <Link to="/login">login</Link>!
+        Already registered? Then <Link to="/login">login</Link>!
       </p>
       <form action="" className="col-med-4 offset" onSubmit={submitHandler}>
         <div className="form-group">
           {formDataError.firstName && (
             <p style={{ color: "red" }}>{formDataError.firstName}</p>
           )}
-          <label htmlFor="firstName"> First Name</label>
+          <label htmlFor="firstName"> First Name </label>
           <input
             className="form-control"
             name="firstName"
@@ -128,7 +127,7 @@ const RegistrationForm = () => {
           {formDataError.lastName && (
             <p style={{ color: "red" }}> {formDataError.lastName}</p>
           )}
-          <label htmlFor="lastName"> Last Name</label>
+          <label htmlFor="lastName"> Last Name </label>
           <input
             className="form-control"
             name="lastName"
@@ -140,7 +139,7 @@ const RegistrationForm = () => {
           {formDataError.email && (
             <p style={{ color: "red" }}>{formDataError.email}</p>
           )}
-          <label htmlFor="email"> Email Address</label>
+          <label htmlFor="email"> Email Address </label>
           <input
             className="form-control"
             name="email"
@@ -153,7 +152,7 @@ const RegistrationForm = () => {
           {formDataError.username && (
             <p style={{ color: "red" }}>{formDataError.username}</p>
           )}
-          <label htmlFor="username"> Username</label>
+          <label htmlFor="username"> Username </label>
           <input
             className="form-control"
             name="username"
@@ -165,7 +164,7 @@ const RegistrationForm = () => {
           {formDataError.password && (
             <p style={{ color: "red" }}>{formDataError.password}</p>
           )}
-          <label htmlFor="password"> password</label>
+          <label htmlFor="password"> Password </label>
           <input
             type="password"
             className="form-control"
@@ -192,7 +191,7 @@ const RegistrationForm = () => {
           {formDataError.instagram && (
             <p style={{ color: "red" }}>{formDataError.instagram}</p>
           )}
-          <label htmlFor="instagram"> Instagram</label>
+          <label htmlFor="instagram"> Instagram </label>
           <input
             className="form-control"
             name="instagram"
@@ -201,7 +200,7 @@ const RegistrationForm = () => {
           />
         </div>{" "}
         <button type="submit" className="btn btn-primary">
-          register
+          Register
         </button>
       </form>
     </div>

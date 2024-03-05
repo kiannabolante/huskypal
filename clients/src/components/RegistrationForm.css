@@ -7,14 +7,19 @@
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 .success-message {
-  color: green;
+  color: rgb(51, 163, 51);
 }
 
 .error-message {
-  color: red;
+  color: rgb(156, 6, 6);
 }
 
 button {
+  margin-top: 5%;
   background-color: #9381c7;
   justify-content: space-between;
+}
+
+.form-group {
+  padding: 10px;
 }
