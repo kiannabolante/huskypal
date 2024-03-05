@@ -27,6 +27,10 @@ const Dashboard = () => {
         <h3>Your Email: {loggedInUser.email} </h3>
         <h3>Your First Name: {loggedInUser.firstName} </h3>
         <h3>Your Last Name: {loggedInUser.lastName} </h3>
+
+        <p>
+          <Link to="/login">go login</Link>!
+        </p>
         {/* <h1>Welcome to HaskyPal {loggedInUser.firstName}!</h1> */}
       </form>
 

@@ -53,7 +53,7 @@ const LoginForm = () => {
         console.log("Response from server:", res);
         saveLoggedInUser(res.data);
         console.log("Navigating to /dashboard");
-        navigate("/user/todolist");
+        navigate("/about/us");
       })
       .catch((err) => {
         console.log("Error from server:", err);

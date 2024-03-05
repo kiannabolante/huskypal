@@ -6,31 +6,43 @@ import email from '../images/Pal-images/email.png';
 import UserContext from '../contexts/UserContext';
 
 const TrackPal = () => {
-  const { loggedInUser } = useContext(UserContext);
+  // const { loggedInUser } = useContext(UserContext);
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    // Fetch data only if the user is logged in
-    if (loggedInUser._id) {
-      axios
-        .get('http://localhost:8000/api/users')
-        .then((response) => {
-          setUsers(response.data.users);
-        })
-        .catch((error) => {
-          console.error('Error fetching users:', error);
-        });
-    }
-  }, [loggedInUser._id]);
+  // useEffect(() => {
+  //   // Fetch data only if the user is logged in
+  //   if (loggedInUser._id) {
+  //     axios
+  //       .get('http://localhost:8000/api/users')
+  //       .then((response) => {
+  //         setUsers(response.data.users);
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error fetching users:', error);
+  //       });
+  //   }
+  // }, [loggedInUser._id]);
 
   // If the user is not logged in, you might want to return a message or redirect them to the login page
-  if (!loggedInUser._id) {
-    return <p>Please log in to view this content.</p>;
-  }
+  // if (!loggedInUser._id) {
+  //   return <p>Please log in to view this content.</p>;
+  // }
+  useEffect(() => {
+    // Fetch users from the server
+    axios
+      .get("http://localhost:8000/api/users")
+      .then((response) => {
+        setUsers(response.data.users);
+      })
+      .catch((error) => {
+        console.error("Error fetching users:", error);
+      });
+  }, []);
+
 
   return (
-    <div className="emailListContainer">
-      <ul className="emailList">
+    <div >
+      <ul >
         {users.map((oneUser) => (
           <li key={oneUser._id} className="emailItem">
             <img src={user} alt="User Icon" className="icon userIcon" />

@@ -8,7 +8,7 @@ module.exports = (app) => {
   // we don't want to logout someone else
   app.post("/api/logout", authenticate, UserController.logout);
   // Add debug logs
-  app.get("/api/users", authenticate, (req, res) => {
+  app.get("/api/users", (req, res) => {
     console.log("Authenticated user:", req.user); // Assuming your authenticate middleware sets user information in the request
     UserController.getAllUsers(req, res);
   });
