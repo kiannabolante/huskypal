@@ -4,13 +4,15 @@ import UserContext from '../contexts/UserContext';
 import { useContext } from 'react';
 import "./RegistrationForm.css";
 
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const { loggedInUser } = useContext(UserContext);
 
-  // useEffect with dependency on loggedInUser
+  // // useEffect with dependency on loggedInUser
   useEffect(() => {
     console.log("Dashboard useEffect triggered");
+    console.log("loggedInUser:", loggedInUser);
     if (!loggedInUser._id) {
       console.log("User not logged in, navigating to /");
       navigate("/");

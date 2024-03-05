@@ -13,13 +13,13 @@ import UserContext from '../contexts/UserContext';
 
 function TraitBox() {
 
-  const { loggedInUser } = useContext(UserContext)
-  // if the user not logged in send them  back to home
-  useEffect(() => {
-    if (!loggedInUser._id) {
-      navigate("/")
-    }
-  }, [])
+  // const { loggedInUser } = useContext(UserContext)
+  // // if the user not logged in send them  back to home
+  // useEffect(() => {
+  //   if (!loggedInUser._id) {
+  //     navigate("/")
+  //   }
+  // }, [])
 
   const [selectedTrait, setSelectedTrait] = useState('');
   const [isOverlayVisible, setIsOverlayVisible] = useState(false); // New state for overlay visibility

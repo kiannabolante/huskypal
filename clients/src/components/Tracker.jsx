@@ -22,8 +22,8 @@ const Tracker = () => {
 
         <h1>LEVEL</h1>
         <div className='wholeLevel'>
-        <div className = "trophyLevel"> <img src={activatedLevels} alt='level display' className='levelDisplay imageSpace1' /></div>
-        <div className="levelTrack">4</div>
+          <div className="trophyLevel"> <img src={activatedLevels} alt='level display' className='levelDisplay imageSpace1' /></div>
+          <div className="levelTrack">4</div>
         </div>
         <h4> Complete more challenges, gain more levels,
           unlock more rewards!
@@ -34,7 +34,7 @@ const Tracker = () => {
       {/* Rewards and Levels */}
       <div className="full-page-box">
         <div className="box-content">
-        <section className=' box displayInLine'>
+          <section className=' box displayInLine'>
             <h2>LEVEL 1</h2>
             <div> <img src={tennisBall} alt='logo8' className='imageSize1 imageSpace1' /></div>
           </section>
@@ -62,45 +62,45 @@ const Tracker = () => {
         </div>
       </div>
 
-       {/* Navigation Bar */}
-       <section className="logos">
-          <div>
+      {/* Navigation Bar */}
+      <section className="logos">
+        <div>
           <Link to="/">
-          <img
-            src={deactivatedHome}
-            alt="home button to get to home page"
-            className="imageSize imageSpace"
-          />
-        </Link>
-          </div>
-          <div>
-            <Link to="/user/accessories">
+            <img
+              src={deactivatedHome}
+              alt="home button to get to home page"
+              className="imageSize imageSpace"
+            />
+          </Link>
+        </div>
+        <div>
+          <Link to="/user/accessories">
             <img
               src={deactivatedCloset}
               alt="closet button to see accessories "
               className="imageSize imageSpace"
             />
-            </Link>
-          </div>
-          <div>
+          </Link>
+        </div>
+        <div>
           <Link to="/user/level">
             <img
               src={activatedLevels}
               alt="levels button to see progress and rewards"
               className="imageSize imageSpace"
             />
-            </Link>
-          </div>
-          <div>
+          </Link>
+        </div>
+        <div>
           <Link to="/user/pal">
-                <img
-                  src={deactivatedPals}
-                  alt="pals button to connect with others"
-                  className="imageSize imageSpace"
-                />
-              </Link>
-          </div>
-        </section>
+            <img
+              src={deactivatedPals}
+              alt="pals button to connect with others"
+              className="imageSize imageSpace"
+            />
+          </Link>
+        </div>
+      </section>
 
     </div>
   )
