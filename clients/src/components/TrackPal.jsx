@@ -48,16 +48,17 @@ const TrackPal = () => {
 
   return (
     <div>
-      <h1> Track Pals </h1>
+        <div className="full-page-users">
+        <h1> Track Pals </h1>
         <p> Reach out to fellow users to complete UW challenges together!
         </p>
-        <div className="full-page-users">
-      <ul>
+        <p>Click on their Instagram icon to get connected!</p>
+      <ul style={{ backgroundColor: "#f8f3e2", padding: "50px", border: "4px solid #6b5d92", borderRadius: "10px"}}>
         {users.map((oneUser) => (
           <li key={oneUser._id} className="emailItem">
             <img src={profileUser} alt="User Icon" className="icon userIcon" />
             <span>
-              <div style={{ color: "purple", textDecoration: "underline" }}>
+              <div style={{ color: "#6b5d92", textDecoration: "none", textAlign: "left", paddingLeft: "15px" }}>
                 User First Name:{" "}
                 <span style={{ margin: "5px" }}>{oneUser.firstName}</span>
               </div>
@@ -67,10 +68,10 @@ const TrackPal = () => {
                 rel="noopener noreferrer"
                 style={{ color: "blue", textDecoration: "underline" }}
               >
-                <span style={{ color: "purple", margin: "20px" }}>
+                {/* <span style={{ color: "purple", margin: "20px" }}>
                   User Instagram:
                 </span>{" "}
-                {oneUser.instagram}
+                {oneUser.instagram} */}
               </a>
             </span>
             {/* <img src={email} alt="Email Icon" className="icon emailIcon" /> */}

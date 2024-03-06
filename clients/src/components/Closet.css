@@ -17,12 +17,14 @@ h1 {
 .custom-table {
   width: 50%;
   margin: 0 auto; /* Center the table horizontally */
+  border-radius: 10px;
 }
 
 .custom-table th,
 .custom-table td {
   padding: 5px;
   border: 4px solid #6B5D92;
+  border-radius: 10px;
   align-items: center; /* Center align items */
   width: 400px; /* Adjust width as needed */
   text-align: center; /* Center align content */

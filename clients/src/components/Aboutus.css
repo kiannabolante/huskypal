@@ -28,6 +28,7 @@
   height: 150px;
   width: 750px;
   border: solid 4px #6B5D92;
+  border-radius: 10px;
   background-color: #FFFCF2;
   margin-bottom: 30px;
   margin-left: 6%;
@@ -38,7 +39,6 @@
   align-items: center; /* Align items vertically */
   justify-content: center; /* Center items horizontally */
   padding-top: 20px;
-
 }
 
 .titleDesc {
