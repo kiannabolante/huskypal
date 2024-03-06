@@ -104,6 +104,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './DubsTrack.css';
 import { getCurrentLevel, setCurrentLevel, MAX_LEVEL } from './LevelSystem.jsx';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 
 import activatedHome from "../images/nav-bar/activatedHome.png";
@@ -209,6 +211,35 @@ function DubsTrack() {
       setLevelMessage(''); // Optionally reset the level message if you're using one
     };
 
+    // this fuction is for suggestons buttons 
+    const navigate = useNavigate(); // Correct usage
+    const location = useLocation();
+    const selectedItem = location.state ? location.state.selectedItem : null;
+    const [suggestion, setSuggestion] = useState('');
+    // const history = useHistory(); // Use useHistory hook for navigation
+  
+    const handleSuggestionChange = (event) => {
+      setSuggestion(event.target.value);
+    };
+    
+    const handleSubmit = (event) => {
+      console.log("Form submitted");
+      event.preventDefault();
+      if (!suggestion.trim()) {
+        console.log("Empty suggestion, not saving");
+        return; // Don't proceed if the suggestion is empty
+      }
+  
+      // Assuming 'suggestions' is the key where you want to save your suggestions
+      const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+      const newSuggestions = [...storedSuggestions, suggestion];
+      localStorage.setItem('suggestions', JSON.stringify(newSuggestions));
+      setSuggestion(''); // Reset suggestion input
+      // Inside your handleSubmit function, just before navigate
+      navigate('/coming-soon', { state: { fromSubmission: true } });
+    };
+
+
     return (
         <div className="track-container">
             {/* Level Progress Bar and Level Display */}
@@ -278,6 +309,20 @@ function DubsTrack() {
                     <img src={deactivatedPals} alt="pals button to connect with others" className="imageSize imageSpace" />
                 </Link>
             </section>
+
+            <div className="suggestion-box">
+              <h3>Add Your Challenge Suggestion</h3>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  value={suggestion}
+                  onChange={handleSuggestionChange}
+                  placeholder="Type your challenge suggestion here..."
+                  className="suggestion-input"
+                />
+                <button type="submit" className="submit-button">Submit</button>
+              </form>
+            </div>
         </div>
     );
 }
