@@ -1,14 +1,13 @@
-/* Make sure the track-container takes up the full height of the viewport */
-.track-container {
-  min-height: 100%;
-  min-width: 150%; /* adjust the size of the page */
-}
+
 
 /* Make sure the track-container or to make it more wild */
 .track-container {
   background-color: #f8f3e2;
   width: 350px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+  min-width: 15%; /* adjust the size of the page */
+  text-align: center; /* Center align text */
 }
 
 /* Ensure the floor-content spans the full width */
@@ -45,6 +44,12 @@
 /* Reset margin for h1 within floor-content */
 .floor-content h1 {
   margin: 0;
+  background-color: #cec1fb;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Center align text */
+
 }
 
 /* Add some styles to the .profile and .avatar sections */
@@ -98,4 +103,23 @@
 .activities li input[type="checkbox"] {
   margin-right: 10px; /* Space between checkbox and text */
   cursor: pointer; /* Changes cursor to pointer on hover over the checkbox */
+}
+
+.iconSize {
+  max-width: 20px; /* Ensures the image doesn't exceed the container's width */
+  max-height: 20px; /* Ensures the image doesn't exceed the container's height */
+  width: auto; /* Ensures the image maintains its aspect ratio */
+  height: auto; /* Ensures the image maintains its aspect ratio */
+}
+
+.iconSpace {
+  width: 20px; /* Define the width of the container */
+  height: 20px; /* Define the height of the container */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+
+.aboutUsContainer {
+  max-width: 650px;
+  margin: auto;
+  padding: 20px;
 }

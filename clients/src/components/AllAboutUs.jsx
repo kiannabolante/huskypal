@@ -2,6 +2,7 @@
 // import UserContext from '../contexts/UserContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import appIcon from "../images/appIcon.png";
 
 import UserContext from '../contexts/UserContext';
 
@@ -10,15 +11,17 @@ const AllAboutUs = () => {
   // const {loggedInUser} = useContext(UserContext);
   console.log(loggedInUser)
   return (
-    <div>
+    <div className = "aboutUsContainer">
       <section>
 
-        <h5>Welcome to HuskyPal{loggedInUser.firstName}: Discover UW with Your Virtual Companion!</h5>
+        <h2>Welcome to HuskyPal{loggedInUser.firstName}: Discover everything UW has to offer with your virtual companion!</h2>
         <p>HuskyPal is your personalized guide to exploring the University of Washington.
           Start each quarter by picking a trait for your HuskyPal, like adventurous or studious,
           and get ready for a series of exciting challenges. From walking trails to attending events,
           each activity is a step towards discovering what UW has to offer.</p>
       </section>
+
+      <img src={appIcon} alt='husky pall app icon' style={{ width: '500px', height: 'auto' }} />
 
       <section>
         <h5>Customize Your Journey</h5>
