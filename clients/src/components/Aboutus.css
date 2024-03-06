@@ -19,4 +19,69 @@
   margin-top: -100px;
 }
 
+.aboutUsContainer p {
+  padding-left: 60px; /* Adjust the padding value according to your needs */
+  padding-right: 60px; /* Adjust the padding value according to your needs */
+}
 
+.box {
+  height: 150px;
+  width: 750px;
+  border: solid 4px #6B5D92;
+  background-color: #FFFCF2;
+  margin-bottom: 30px;
+  margin-left: 6%;
+}
+
+.displayDesk {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding-top: 20px;
+
+}
+
+.titleDesc {
+  margin-bottom: -50px;
+}
+
+.box p {
+  margin-bottom: -50px;
+}
+
+.box h5 {
+  margin-bottom: -50px;
+  margin-left: 5%;
+}
+
+/* .button {
+  width: 100px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #6B5D92;
+  color: #FFFCF2;
+  font-size: 16px;
+  border: none;
+} */
+
+.button {
+  width: 150px; /* Increase width for better visibility */
+  height: 50px;
+  border-radius: 25px; /* Adjust border radius for rounded corners */
+  background-color: #6B5D92;
+  color: #FFFCF2;
+  font-size: 18px; /* Increase font size for better readability */
+  border: none;
+  cursor: pointer; /* Add cursor pointer to indicate interactivity */
+  margin-top: 15px; /* Add margin to separate the button from the paragraph */
+  margin-bottom: 15px;
+}
+
+.button:hover {
+  background-color: #4b3e6d; /* Change background color on hover for better visual feedback */
+}
+
+.button a {
+  color: #FFFCF2; /* Set text color for the link inside the button */
+  text-decoration: none; /* Remove underline from the link */
+}

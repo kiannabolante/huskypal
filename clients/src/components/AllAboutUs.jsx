@@ -30,8 +30,8 @@ const AllAboutUs = () => {
         </p>
       </section>
 
-      <section>
-        <h5>Customize Your Journey</h5>
+      <section className=' box displayDesk'>
+        <h5>Customize Your Journey!</h5>
         <p>
           As you complete challenges, you'll level up and unlock accessories for
           your HuskyPal, making your virtual companion uniquely yours. Finish
@@ -39,8 +39,9 @@ const AllAboutUs = () => {
           reward.
         </p>
       </section>
-      <section>
-        <h4>Connect and Share</h4>
+
+      <section className=' box displayDesk'>
+        <h5>Connect and Share!</h5>
         <p>
           HuskyPal isn't just for solo adventures; it's a way to connect with
           other students. Share your experiences and take on challenges
@@ -49,13 +50,12 @@ const AllAboutUs = () => {
       </section>
       <section>
         <h5>
-          {" "}
-          <button type="button">
+          <button type="button" className="button">
             <Link to="/home">Get Started</Link>
           </button>{" "}
         </h5>
         <p>
-          Join HuskyPal today and turn your UW journey into an adventure filled
+          Get ready to turn your UW journey into an adventure filled
           with discovery, growth, and community. Your HuskyPal is ready to
           explore with you!
         </p>
