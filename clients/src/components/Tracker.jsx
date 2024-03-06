@@ -17,22 +17,18 @@ import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 const Tracker = () => {
   return (
     <div style={{ backgroundColor: "#F8F3E2" }}>
+      {/* Rewards and Levels */}
+      <div className="full-page-box">
       <h1> Track Milestones </h1>
-      <section >
-
-        <h1>LEVEL</h1>
+        {/* <h3>LEVEL</h3>
         <div className='wholeLevel'>
           <div className="trophyLevel"> <img src={activatedLevels} alt='level display' className='levelDisplay imageSpace1' /></div>
           <div className="levelTrack">4</div>
-        </div>
-        <h4> Complete more challenges, gain more levels,
+        </div> */}
+        <p> Complete more challenges, gain more levels,
           unlock more rewards!
-        </h4>
-        <hr />
-      </section>
-
-      {/* Rewards and Levels */}
-      <div className="full-page-box">
+        </p>
+        <p>Here are all the rewards you can unlock in this track.</p>
         <div className="box-content">
           <section className=' box displayInLine'>
             <h2>LEVEL 1</h2>
