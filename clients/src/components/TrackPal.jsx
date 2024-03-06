@@ -1,15 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
-import user from '../images/Pal-images/user.png';
-import './TrackPal.css';
-import email from '../images/Pal-images/email.png';
-import UserContext from '../contexts/UserContext';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
+import user from "../images/Pal-images/user.png";
+import { Link } from "react-router-dom";
+import "./TrackPal.css";
+import instagram from "../images/Pal-images/instagram.png";
+import profileUser from "../images/Pal-images/profileUser.png";
+import UserContext from "../contexts/UserContext";
 import deactivatedHome from "../images/nav-bar/deactivatedHome.png";
-import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
+import activatedPals from "../images/nav-bar/activatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
-import activatedHome from "../images/nav-bar/activatedHome.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 
 const TrackPal = () => {
@@ -47,41 +46,56 @@ const TrackPal = () => {
       });
   }, []);
 
-
   return (
-    <div >
-      <ul >
+    <div>
+      <h1> Track Pals </h1>
+        <p> Reach out to fellow users to complete UW challenges together!
+        </p>
+        <div className="full-page-users">
+      <ul>
         {users.map((oneUser) => (
           <li key={oneUser._id} className="emailItem">
-            <img src={user} alt="User Icon" className="icon userIcon" />
+            <img src={profileUser} alt="User Icon" className="icon userIcon" />
             <span>
-              <div style={{ color: 'purple', textDecoration: 'underline' }}>
-                User First Name: <span style={{ margin: '5px' }}>{oneUser.firstName}</span>
+              <div style={{ color: "purple", textDecoration: "underline" }}>
+                User First Name:{" "}
+                <span style={{ margin: "5px" }}>{oneUser.firstName}</span>
               </div>
               <a
                 href={`https://www.instagram.com/${oneUser.instagram}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'blue', textDecoration: 'underline' }}
+                style={{ color: "blue", textDecoration: "underline" }}
               >
-                <span style={{ color: 'purple', margin: '20px' }}>User Instagram:</span> {oneUser.instagram}
+                <span style={{ color: "purple", margin: "20px" }}>
+                  User Instagram:
+                </span>{" "}
+                {oneUser.instagram}
               </a>
             </span>
-            <img src={email} alt="Instagram Icon" className="icon emailIcon" />
+            {/* <img src={email} alt="Email Icon" className="icon emailIcon" /> */}
+              <a
+                href={`https://www.instagram.com/${oneUser.instagram}`}
+                target="_blank"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <img src={instagram} alt="Instagram Icon" className="icon emailIcon" />
+              </a>
           </li>
         ))}
       </ul>
+      </div>
 
-      {/* Additional content with logos */}
-      <section className="logos">
+            {/* Navigation Bar */}
+            <section className="logos">
         <div>
-        <Link to="/">
-          <img
-            src={activatedHome}
-            alt="home button to get to home page"
-            className="imageSize imageSpace"
-          />
-        </Link>
+          <Link to="/user/todolist">
+            <img
+              src={deactivatedHome}
+              alt="home button to get to home page"
+              className="imageSize imageSpace"
+            />
+          </Link>
         </div>
         <div>
           <Link to="/user/accessories">
@@ -102,13 +116,13 @@ const TrackPal = () => {
           </Link>
         </div>
         <div>
-        <Link to="/user/pal">
-                <img
-                  src={deactivatedPals}
-                  alt="pals button to connect with others"
-                  className="imageSize imageSpace"
-                />
-              </Link>
+          <Link to="/user/pal">
+            <img
+              src={activatedPals}
+              alt="pals button to connect with others"
+              className="imageSize imageSpace"
+            />
+          </Link>
         </div>
       </section>
     </div>
