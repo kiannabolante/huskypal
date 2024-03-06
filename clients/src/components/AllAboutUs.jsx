@@ -31,12 +31,11 @@ const AllAboutUs = () => {
           Share your experiences and take on challenges together, enriching your UW experience.</p>
       </section>
       <section>
-        <h5>   <button type="button"><Link to="/user/todolist">Get Started</Link></button> </h5>
+        <h5>   <button type="button"><Link to="/home">Get Started</Link></button> </h5>
         <p>Join HuskyPal today and turn your UW journey into an adventure filled with discovery,
           growth, and community. Your HuskyPal is ready to explore with you!</p>
 
       </section>
-
 
     </div>
   )
