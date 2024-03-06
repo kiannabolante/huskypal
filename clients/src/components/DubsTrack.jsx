@@ -239,7 +239,6 @@ function DubsTrack() {
       navigate('/coming-soon', { state: { fromSubmission: true } });
     };
 
-
     return (
         <div className="track-container">
             {/* Level Progress Bar and Level Display */}
