@@ -19,6 +19,7 @@ import Header from "./components/Header.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import DisplayAll from "./components/DisplayAll.js";
 import AllAboutUs from "./components/AllAboutUs.jsx";
+import ComingSoon from "./components/ComingSoon.jsx";
 
 function App() {
   // hold user information
@@ -56,6 +57,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/user/info" element={<DisplayAll />} />
             <Route path="/about/us" element={<AllAboutUs />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
           </Routes>
         </Router>
       </UserContext.Provider>

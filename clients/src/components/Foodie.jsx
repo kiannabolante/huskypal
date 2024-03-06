@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './Creative.css'
+import './DubsTrack.css'; // Assuming your CSS file is named DubsTrack.css
 import { useLocation } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'; // Import useHistory from react-router-dom for navigation
 
 
 import activatedHome from "../images/nav-bar/activatedHome.png";
@@ -16,11 +17,37 @@ import basketBall from '../images/athletic-rewards/basketBall.png';
 import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
-function Foodie() {
+function DubsTrack() {
 
     // Use useLocation hook to access location state
     const location = useLocation();
+    const navigate = useNavigate(); // Correct usage
     const selectedItem = location.state ? location.state.selectedItem : null;
+    const [suggestion, setSuggestion] = useState('');
+    // const history = useHistory(); // Use useHistory hook for navigation
+  
+    const handleSuggestionChange = (event) => {
+      setSuggestion(event.target.value);
+    };
+    
+    const handleSubmit = (event) => {
+      console.log("Form submitted");
+      event.preventDefault();
+      if (!suggestion.trim()) {
+        console.log("Empty suggestion, not saving");
+        return; // Don't proceed if the suggestion is empty
+      }
+  
+      // Assuming 'suggestions' is the key where you want to save your suggestions
+      const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+      const newSuggestions = [...storedSuggestions, suggestion];
+      localStorage.setItem('suggestions', JSON.stringify(newSuggestions));
+      setSuggestion(''); // Reset suggestion input
+      // Inside your handleSubmit function, just before navigate
+      navigate('/coming-soon', { state: { fromSubmission: true } });
+    };
+
+
   return (
     <div className="track-container">
       <header className="header">
@@ -40,15 +67,15 @@ function Foodie() {
 
       <div className='floor-content'>
         <div className="track-title">
-          <h3>Foodie Track</h3>
+          <h3>Athletic Track</h3>
         </div>
         <ul className="activities">
           {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>Campus Cuisine Tour: Explore different dining options on campus and rate your favorite meals from each location</li>
-          <li><input type="checkbox" />Cultural Cooking Class: Attend a cooking class focused on a specific cuisine or cultural dish, hosted by a student organization or local chef</li>
-          <li><input type="checkbox" />Food Truck Frenzy: Sample offerings from various food trucks parked on campus during a designated food truck event</li>
-          <li><input type="checkbox" />Farmers Market Challenge: Create a meal using only ingredients purchased from the UW Farmers Market, showcasing local and sustainable produce</li>
-          <li><input type="checkbox" />Culinary Club Cuisine Exploration: Attend a cooking demonstration or tasting event hosted by a culinary-focused RSO on campus</li>
+          <li className="completed"><input type="checkbox"/>Go on a run on the Burke Gilman Trail</li>
+          <li><input type="checkbox" />Join a sports or fitness-related RSO</li>
+          <li><input type="checkbox" />Friday night skating at the IMA:  Form a team and participate in a relay race during Friday night skating at the IMA</li>
+          <li><input type="checkbox" />UW Sports Game Challenge: Attend at least three different UW sports games in a semester</li>
+          <li><input type="checkbox" />Attend Adventure Club Expedition: Participate in activities such as hiking, rock climbing, kayaking, or camping</li>
         </ul>
       </div>
 
@@ -91,9 +118,23 @@ function Foodie() {
               </Link>
         </div>
       </section>
+
+      <div className="suggestion-box">
+        <h3>Add Your Challenge Suggestion</h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={suggestion}
+            onChange={handleSuggestionChange}
+            placeholder="Type your challenge suggestion here..."
+            className="suggestion-input"
+          />
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
+      </div>
     </div>
 
   );
 }
 
-export default Foodie;
+export default DubsTrack;

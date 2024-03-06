@@ -1,0 +1,61 @@
+/* Styles the overall container for a centered, clean look */
+.coming-soon-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Styles the heading for emphasis */
+  .coming-soon-heading {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the suggestions list for better readability */
+  .coming-soon-suggestions ul {
+    list-style-type: none; /* Removes default list bullet points */
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .coming-soon-suggestions li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  /* Enhances the text inside the list for better readability */
+  .coming-soon-suggestions li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  /* Adds a subtle hover effect to each list item */
+  .coming-soon-suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* .clear-suggestions-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #f44336; /* A vivid color to indicate a clear/reset action */
+    /* border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  } */
+  
+  /* .clear-suggestions-btn:hover {
+    background-color: #d32f2f; /* Darker shade for hover effect */
+  /* }  */ 
+  

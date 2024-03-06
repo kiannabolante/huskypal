@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Creative.css'
 import { useLocation } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 import activatedHome from "../images/nav-bar/activatedHome.png";
@@ -17,10 +18,35 @@ import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function Studious() {
+  const navigate = useNavigate(); // Correct usage
+  // Use useLocation hook to access location state
+  const location = useLocation();
+  const selectedItem = location.state ? location.state.selectedItem : null;
 
-    // Use useLocation hook to access location state
-    const location = useLocation();
-    const selectedItem = location.state ? location.state.selectedItem : null;
+  const [suggestion, setSuggestion] = useState('');
+  // const history = useHistory(); // Use useHistory hook for navigation
+
+  const handleSuggestionChange = (event) => {
+    setSuggestion(event.target.value);
+  };
+  
+  const handleSubmit = (event) => {
+    console.log("Form submitted");
+    event.preventDefault();
+    if (!suggestion.trim()) {
+      console.log("Empty suggestion, not saving");
+      return; // Don't proceed if the suggestion is empty
+    }
+
+    // Assuming 'suggestions' is the key where you want to save your suggestions
+    const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+    const newSuggestions = [...storedSuggestions, suggestion];
+    localStorage.setItem('suggestions', JSON.stringify(newSuggestions));
+    setSuggestion(''); // Reset suggestion input
+    // Inside your handleSubmit function, just before navigate
+    navigate('/coming-soon', { state: { fromSubmission: true } });
+  };
+
   return (
     <div className="track-container">
       <header className="header">
@@ -91,6 +117,20 @@ function Studious() {
               </Link>
         </div>
       </section>
+
+      <div className="suggestion-box">
+        <h3>Add Your Challenge Suggestion</h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={suggestion}
+            onChange={handleSuggestionChange}
+            placeholder="Type your challenge suggestion here..."
+            className="suggestion-input"
+          />
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
+      </div>
     </div>
 
   );

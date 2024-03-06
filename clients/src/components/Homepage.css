@@ -8,7 +8,6 @@
 }
 
 
-
 /*Title */
 .trait-header {
   color: #9381c7;
@@ -76,6 +75,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #9381c7;
 }
+
 /* this code is trait or adjust of the width of the homepage */
 .trait {
   color: #9381c7;
@@ -91,19 +91,18 @@ button[type="submit"]:hover {
   gap: 10px;
 }
 
-
 /* Existing styles */
 .overlay {
-  position: fixed; /* Or absolute, depending on your layout */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above all other content */
+  z-index: 1000;
 }
 
 .overlay-content {
@@ -111,5 +110,5 @@ button[type="submit"]:hover {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center; /* Center the text inside the overlay content */
+  text-align: center;
 }
