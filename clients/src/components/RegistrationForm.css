@@ -1,13 +1,13 @@
 .registration-form {
-  width: 600px;
+  max-width: 6500px;
   margin: auto;
   padding: 20px;
   /* border: 1px solid #ccc;
-  border-radius: 5px; */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 .success-message {
-  color: rgb(51, 163, 51);
+  color: rgb(54, 122, 54);
 }
 
 .error-message {
