@@ -86,6 +86,7 @@ useEffect(() => {
     <div style={{ backgroundColor: "#CEC1FB" }}>
       <div className="container">
         <h1>Your Accessories</h1>
+        <p>Place items into your HuskyPal's room!</p>
         <section className="displayLine">
           <div className="custom-table-container">
             <table className="table custom-table">
