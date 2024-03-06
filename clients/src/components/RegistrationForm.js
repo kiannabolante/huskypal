@@ -108,7 +108,7 @@ const RegistrationForm = () => {
     <div className="registration-form">
       <h3> Please Register to HuskyPal </h3>
       <p>
-        Already registered? Then <Link to="/login">login</Link>!
+        Already registered? Then please <Link to="/login">login</Link>!
       </p>
       <form action="" className="col-med-4 offset" onSubmit={submitHandler}>
         <div className="form-group">
