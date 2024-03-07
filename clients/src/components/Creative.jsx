@@ -176,9 +176,12 @@ function Creative() {
             className="homeLevel"
           />
 
-        <div className="level" style={{ marginTop: "-54px", fontSize: "18px" }}>
-          {level}
-        </div>
+          <div
+            className="level"
+            style={{ marginTop: "-54px", fontSize: "18px" }}
+          >
+            {level}
+          </div>
         </div>
       </header>
       <div className="profile">

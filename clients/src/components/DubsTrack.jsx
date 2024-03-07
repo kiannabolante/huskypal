@@ -168,34 +168,43 @@ function DubsTrack() {
       <div className="current-level-display">Level: {level}</div>
       {levelMessage && <div className="level-up-message">{levelMessage}</div>}
       <header className="header">
-        <div className="trophy-icon">
+      <div className="trophy-icon">
           <img
             src={activatedLevels}
             alt="level display"
             className="homeLevel"
           />
+
+          <div
+            className="level"
+            style={{ marginTop: "-54px", fontSize: "18px" }}
+          >
+            {level}
+          </div>
         </div>
-        <div className="level" style={{marginTop: "-62px", fontSize: "18px"}}>{level}</div>
-      </header>
+        </header>
       <div className="profile">
         <br></br>
         <br></br>
         <h3>Dubs</h3>
       </div>
-      <div className="avatar">
-        <img
-          src={huskyAvatar}
-          alt="husky"
-          style={{ justifyContent: "center" }}
-        />
+      <div className="avatar-container">
+        <div className="avatar">
+          <img src={huskyAvatar} alt="husky" />
+        </div>
         <div className="selected-items">
           {selectedItems.map((item, index) => (
-            <img key={index} src={item.image} alt={`selected item ${index}`} />
+            <img
+              key={index}
+              src={item.image}
+              alt={`selected item ${index}`}
+              className="selected-item"
+            />
           ))}
         </div>
       </div>
       <div className="floor-content">
-        <h3>Athletic Track</h3>
+        <h3>Creative Track</h3>
         <ul className="activities">
           {tasks.map((task) => (
             <li

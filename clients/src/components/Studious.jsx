@@ -145,56 +145,78 @@ function Studious() {
       <div className="current-level-display">Level: {level}</div>
       {levelMessage && <div className="level-up-message">{levelMessage}</div>}
       <header className="header" style={{marginTop:"-80px"}}>
-        <div className="trophy-icon">
+      <div className="trophy-icon">
           <img
             src={activatedLevels}
             alt="level display"
             className="homeLevel"
           />
+
+          <div
+            className="level"
+            style={{ marginTop: "-54px", fontSize: "18px" }}
+          >
+            {level}
+          </div>
         </div>
-        <div className="level" style={{marginTop: "-62px", fontSize: "18px"}}>{level}</div>
-      </header>
+        </header>
       <div className="profile">
         <br></br>
         <br></br>
         <h3>Dubs</h3>
       </div>
+      <div className="avatar-container">
         <div className="avatar">
-            <img src={huskyAvatar} alt="husky" />
-            <div className="selected-items">
-                {selectedItems.map((item, index) => (
-                    <img key={index} src={item.image} alt={`selected item ${index}`} />
-                ))}
-            </div>
+          <img src={huskyAvatar} alt="husky" />
         </div>
-        <div className="floor-content">
-            <h3>Studious Track</h3>
-            <ul className="activities">
-            {tasks.map((task) => (
-                <li key={task.id} className={`task-item ${task.completed ? "completed" : ""}`}>
-                <div className="checkbox-container">
-                    <input
-                    type="checkbox"
-                    checked={task.completed}
-                    onChange={() => handleTaskCompletion(task.id)}
-                    />
-                </div>
-                <div
-                    className="task-label"
-                    onClick={() => toggleExpansion(task.id)}
-                >
-                    {expandedId === task.id ? (
-                    <span>{task.label} <span className="read-more">Read Less</span></span>
-                    ) : (
-                    <span>
-                        {task.label.length > 100 ? `${task.label.substring(0, 100)}... ` : task.label}
-                        {task.label.length > 100 && <span className="read-more">Read More</span>}
-                    </span>
+        <div className="selected-items">
+          {selectedItems.map((item, index) => (
+            <img
+              key={index}
+              src={item.image}
+              alt={`selected item ${index}`}
+              className="selected-item"
+            />
+          ))}
+        </div>
+      </div>
+      <div className="floor-content">
+        <h3>Creative Track</h3>
+        <ul className="activities">
+          {tasks.map((task) => (
+            <li
+              key={task.id}
+              className={`task-item ${task.completed ? "completed" : ""}`}
+            >
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => handleTaskCompletion(task.id)}
+                />
+              </div>
+              <div
+                className="task-label"
+                onClick={() => toggleExpansion(task.id)}
+              >
+                {expandedId === task.id ? (
+                  <span>
+                    {task.label} <span className="read-more">Read Less</span>
+                  </span>
+                ) : (
+                  <span>
+                    {task.label.length > 100
+                      ? `${task.label.substring(0, 100)}... `
+                      : task.label}
+                    {task.label.length > 100 && (
+                      <span className="read-more">Read More</span>
                     )}
-                </div>
-                </li>
-            ))}
-            </ul>
+                  </span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
             <div className="suggestion-box">
           <h4 style={{ marginTop: "0px", marginBottom: "-5px" }}>
             Suggest a Challenge!
