@@ -112,10 +112,10 @@ const RegistrationForm = () => {
       </p>
       <form action="" className="col-med-4 offset" onSubmit={submitHandler}>
         <div className="form-group">
+          <label htmlFor="firstName"> First Name </label>
           {formDataError.firstName && (
             <p style={{ color: "red" }}>{formDataError.firstName}</p>
           )}
-          <label htmlFor="firstName"> First Name </label>
           <input
             className="form-control"
             name="firstName"
@@ -124,10 +124,10 @@ const RegistrationForm = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="lastName"> Last Name </label>
           {formDataError.lastName && (
             <p style={{ color: "red" }}> {formDataError.lastName}</p>
           )}
-          <label htmlFor="lastName"> Last Name </label>
           <input
             className="form-control"
             name="lastName"
@@ -136,10 +136,10 @@ const RegistrationForm = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="email"> Email Address </label>
           {formDataError.email && (
             <p style={{ color: "red" }}>{formDataError.email}</p>
           )}
-          <label htmlFor="email"> Email Address </label>
           <input
             className="form-control"
             name="email"
@@ -149,10 +149,10 @@ const RegistrationForm = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="username"> Username </label>
           {formDataError.username && (
             <p style={{ color: "red" }}>{formDataError.username}</p>
           )}
-          <label htmlFor="username"> Username </label>
           <input
             className="form-control"
             name="username"
@@ -161,10 +161,10 @@ const RegistrationForm = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="password"> Password </label>
           {formDataError.password && (
             <p style={{ color: "red" }}>{formDataError.password}</p>
           )}
-          <label htmlFor="password"> Password </label>
           <input
             type="password"
             className="form-control"
@@ -174,10 +174,10 @@ const RegistrationForm = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="confirmPassword"> Confirm Password </label>
           {formDataError.confirmPassword && (
             <p style={{ color: "red" }}>{formDataError.confirmPassword}</p>
           )}
-          <label htmlFor="confirmPassword"> Confirm Password </label>
           <input
             className="form-control"
             type="password"
@@ -188,10 +188,10 @@ const RegistrationForm = () => {
         </div>
         {/* Add the following block for the Instagram field */}
         <div className="form-group">
+          <label htmlFor="instagram"> Instagram </label>
           {formDataError.instagram && (
             <p style={{ color: "red" }}>{formDataError.instagram}</p>
           )}
-          <label htmlFor="instagram"> Instagram </label>
           <input
             className="form-control"
             name="instagram"
