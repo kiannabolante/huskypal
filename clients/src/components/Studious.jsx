@@ -181,7 +181,7 @@ function Studious() {
         </div>
       </div>
       <div className="floor-content">
-        <h3>Creative Track</h3>
+        <h3>Studious Track</h3>
         <ul className="activities">
           {tasks.map((task) => (
             <li

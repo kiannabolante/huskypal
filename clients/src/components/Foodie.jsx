@@ -180,7 +180,7 @@ function Foodie() {
         </div>
       </div>
       <div className="floor-content">
-        <h3>Creative Track</h3>
+        <h3>Foodie Track</h3>
         <ul className="activities">
           {tasks.map((task) => (
             <li
