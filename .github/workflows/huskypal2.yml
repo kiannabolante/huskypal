@@ -26,9 +26,10 @@ jobs:
       - name: Set up Jest and Babel
         working-directory: ./clients
         run: |
-          npm install --save-dev jest @babel/preset-env @babel/preset-react @babel/plugin-transform-modules-commonjs
+          npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react @babel/plugin-transform-modules-commonjs
           echo '{ "presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-modules-commonjs"] }' > .babelrc
-      - name: Run tests
-        working-directory: ./clients
-        run: npm test
+          echo '{ "transform": { "^.+\\.jsx?$": "babel-jest" } }' > jest.config.js
+          - name: Run tests
+            working-directory: ./clients
+            run: npm test
 
