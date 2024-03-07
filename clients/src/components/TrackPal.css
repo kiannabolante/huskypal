@@ -19,11 +19,9 @@ section h4 {
   margin-top: 0;
 }
 
-
-
 /* Styles for the email list */
 .emailList {
-  list-style: none; /* Removes default bullet points */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -32,7 +30,7 @@ section h4 {
   display: flex;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #6b5d92; /* the lines in between */
+  border-bottom: 1px solid #6b5d92;
   text-decoration: none;
 }
 .emailItem:last-child {
@@ -40,7 +38,7 @@ section h4 {
 }
 
 .emailItem a {
-  text-decoration: none; /* Remove text decoration for the links within emailItem */
+  text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
@@ -75,7 +73,7 @@ section h4 {
 .logos {
   position: fixed;
   top: 50%;
-  right: 20px; /* Adjust as needed to position it towards the middle right */
+  right: 20px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -92,6 +90,6 @@ section h4 {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  margin: 0 auto; /* Add this line to center the box horizontally */
+  margin: 0 auto;
 }
 

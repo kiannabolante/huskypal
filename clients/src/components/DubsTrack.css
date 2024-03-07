@@ -1,22 +1,13 @@
-/* Make sure the track-container takes up the full height of the viewport */
 .track-container {
   min-height: 100%;
 }
 
-
-
-
-/* Make sure the track-container or to make it more wild */
 .track-container {
     background-color: #F8F3E2;
     width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-
-
-
- /* Ensure the floor-content spans the full width */
 .floor-content {
   background-color: #CEC1FB;
   padding: 20px;
@@ -24,261 +15,175 @@
   box-sizing: border-box;
 }
 
+.activities {
+  list-style: none;
+  padding: 0;
+}
 
+.activities li {
+  background-color: #9381C7;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
 
+.avatar img {
+  width: 150px;
+  margin-bottom: -20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
 
-  .activities {
-    list-style: none;
-    padding: 0;
-  }
-
-
-
-
-  /* make the box board */
-  .activities li {
-    background-color: #9381C7;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #fff;
-  }
-
-
-
-
-  .avatar img {
-    width: 150px; /* Adjust the width of the image */
-    margin-bottom: -20px;
-    height: auto; /* Maintain aspect ratio */
-    display: flex; /* Use flexbox to align items horizontally */
-    justify-content: center; /* Center the items horizontally */
-  }
-
-
-
-
-  /* Reset margin for h1 within floor-content */
 .floor-content h1 {
   margin: 0;
 }
 
-
-
-
-/* Add some styles to the .profile and .avatar sections */
 .profile {
-  margin-bottom: 20px; /* Add some space between profile and avatar */
+  margin-bottom: 20px;
   padding: 25px;
 }
 
-
-
-
 .avatar {
-  display: flex; /* Use flexbox to align items horizontally */
-  justify-content: center; /* Center the items horizontally */
-  margin-bottom: -5px; /* Add margin at the bottom */
+  display: flex;
+  justify-content: center;
+  margin-bottom: -5px;
 }
-
-
-
 
 .homeLevel {
   max-width: 10%;
-  max-height: 10%; /* Ensures the image doesn't exceed the container's height */
-  width: auto; /* Ensures the image maintains its aspect ratio */
-  height: auto; /* Ensures the image maintains its aspect ratio */
+  max-height: 10%;
+  width: auto;
+  height: auto;
   margin-top: 20%;
 }
-
-
-
 
 .level {
   margin-top: -38px;
   font-size: 12px;
 }
 
-
-
-
 .selected-item {
   margin-left: -15px;
 }
 
-
-
-
-/* Styles for the activities list */
 .activities {
-  list-style-type: none; /* Removes default list styling */
-  padding-left: 0; /* Removes default padding */
+  list-style-type: none;
+  padding-left: 0;
 }
 
-
-
-
-/* Styles for each activity item */
 .activities li {
-  display: flex; /* Use flexbox for aligning checkbox and text */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Add some space between list items */
-  background-color: #9381C7; /* Background color for list item */
-  color: white; /* Text color */
-  padding: 10px; /* Padding inside each list item */
-  border-radius: 5px; /* Rounded corners for the list items */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #9381C7;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-
-
-
-/* Styles for the checkboxes */
 .activities li input[type="checkbox"] {
-  margin-right: 10px; /* Space between checkbox and text */
-  cursor: pointer; /* Changes cursor to pointer on hover over the checkbox */
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-
-
-
-/* Styles for the activities list */
 .activities {
-  list-style-type: none; /* Removes default list styling */
-  padding-left: 0; /* Removes default padding */
+  list-style-type: none;
+  padding-left: 0;
 }
 
-
-
-
-/* Styles for each activity item */
 .activities li {
-  display: flex; /* Use flexbox for aligning checkbox and text */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Add some space between list items */
-  background-color: #9381C7; /* Background color for list item */
-  color: white; /* Text color */
-  padding: 10px; /* Padding inside each list item */
-  border-radius: 5px; /* Rounded corners for the list items */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-  overflow: hidden; /* Prevents overall overflow */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #9381C7;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-
-/* New wrapper around the checkbox for consistent sizing */
 .activities li .checkbox-container {
   display: flex;
-  align-items: center; /* Center align checkbox and text */
-  flex-shrink: 0; /* Prevent the checkbox container from shrinking */
-  flex-grow: 0; /* Prevent the checkbox container from growing */
-  margin-right: 10px; /* Space between checkbox and text */
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 10px;
 }
 
-
-/* Adjusted styles for the checkbox */
 .activities li input[type="checkbox"] {
   cursor: pointer;
-  /* Remove width and height adjustments to use transform for sizing */
-  transform: scale(1); /* Adjust scale as needed for size */
+  transform: scale(1);
 }
 
-
-/* Ensure label text does not wrap or overflow */
 .activities li label {
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Show ellipsis for overflow text */
-  flex-grow: 1; /* Allow the label to take up remaining space */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
 }
 
-
-/* Styles for the checkboxes */
 .activities li input[type="checkbox"] {
-  margin-right: 10px; /* Space between checkbox and text */
+  margin-right: 10px;
   width: 70px;
   height: 50px;
 }
 
-
 .activities li span {
   cursor: pointer;
-  color: white; /* Typical link color */
+  color: white;
 }
 
-
-
-
-/* Adjusting checkbox appearance when checked */
 .activities li input[type="checkbox"]:checked + label {
-  text-decoration: line-through; /* Optional: if you use labels next to checkboxes */
+  text-decoration: line-through;
 }
 
-
-/* levelig related */
 .level-progress-container {
-  height: 20px; /* Height of the progress bar container */
-  width: 100%; /* Whether it reaches the edge of the */
-  background-color: #fffcf2; /* Background color for the container */
-  border-radius: 10px; /* Rounded corners for the container */
+  height: 20px;
+  width: 100%;
+  background-color: #fffcf2;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border: 3px solid #9381c7;
 }
 
-
-
-
 .level-progress-bar {
-  height: 100%; /* height of its container */
-  background-color: #CEC1FB; /* Progress bar */
-  border-radius: 8px; /* Rounded corners for the progress bar */
-  transition: width 0.3s ease-in-out; /* Smooth transition for when it decreases or increases */
+  height: 100%;
+  background-color: #CEC1FB;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
 }
-
-
-
 
 /* Navigation Icons Container */
 .logos {
-  position: fixed; /* Fixed position relative to the viewport */
-  right: 70px; /* Align to the right edge of the viewport */
-  top: 50%; /* Initially position in the middle to then adjust to center the icons vertically */
-  transform: translateY(-50%); /* Center the container vertically */
-  z-index: 1000; /* High z-index to ensure it's above other content */
-
-
-
-
-  /* Reset potential conflicting styles */
-  width: auto; /* Only as wide as its content */
-  height: auto; /* Only as tall as its content */
-  pointer-events: none; /* Prevent the container from capturing clicks */
+  position: fixed;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  pointer-events: none;
 }
-
-
-
 
 /* Style for individual icons within the navigation */
 .logos img {
-  width: 50px; /* Adjust based on your icon size */
-  height: auto; /* Maintain aspect ratio */
-  cursor: pointer; /* Visual cue for clickable items */
-  margin: 10px 0; /* Space out icons */
+  width: 50px;
+  height: auto;
+  cursor: pointer; 
+  margin: 10px 0;
 }
 
-
-
-
-/* Use pointer-events to ensure only the icons are clickable, not the entire container */
+/* Pointer-events to ensure only the icons are clickable and not the entire container */
 .logos img {
-  pointer-events: auto; /* Enable pointer events on icons */
-  margin: 1opx 0; /* Space between icons */
+  pointer-events: auto;
+  margin: 1opx 0;
 }
-
-
-
 
 .logos {
-  pointer-events: none; /* Disable pointer events on the container itself */
+  pointer-events: none;
 }

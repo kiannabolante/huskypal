@@ -9,31 +9,27 @@ import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 
 function ComingSoon() {
-    const location = useLocation(); // Use useLocation hook to access the navigation state
-    const [suggestions, setSuggestions] = useState([]);
+  const location = useLocation(); // Use useLocation hook to access the navigation state
+  const [suggestions, setSuggestions] = useState([]);
 
-    useEffect(() => {
-      const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-      setSuggestions(storedSuggestions);
-    }, []);
+  useEffect(() => {
+    const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+    setSuggestions(storedSuggestions);
+  }, []);
 
-    // Check if the user navigated here after submitting a suggestion
-    const fromSubmission = location.state?.fromSubmission;
-
-    function clearSuggestions() {
-        const confirmClear = window.confirm("Are you sure you want to clear all suggestions?");
-        if (confirmClear) {
-          localStorage.removeItem('suggestions');
-          setSuggestions([]);
-        }
+  // Check if the user navigated here after submitting a suggestion
+  const fromSubmission = location.state?.fromSubmission;
+  function clearSuggestions() {
+    const confirmClear = window.confirm("Are you sure you want to clear all suggestions?");
+    if (confirmClear) {
+      localStorage.removeItem('suggestions');
+      setSuggestions([]);
     }
+  }
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      {/* Remove the Coming Soon heading and only show Wait to get approved conditionally */}
       {fromSubmission && <h1>Wait to get approved</h1>}
-
-      {/* Conditionally display the suggestions list if fromSubmission is true */}
       {fromSubmission && (
         <div>
           <ul>
@@ -43,11 +39,6 @@ function ComingSoon() {
           </ul>
         </div>
       )}
-
-       {/* Button to clear all suggestions
-       <button onClick={clearSuggestions} className="clear-suggestions-btn">Clear All Suggestions</button> */}
-
-        {/* Additional content with logos */}
         <section className="logos">
         <div>
         <Link to="/">

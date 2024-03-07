@@ -21,7 +21,6 @@ const Closet = () => {
     { image: basketBall, initialText: "Place" },
     { image: basketBallHoop, initialText: "Place" },
     // { image: baseBallAndMit, initialText: "Not Unlocked" },
-    // Add more button data as needed
   ];
 
   // Initialize state for button texts
@@ -33,13 +32,13 @@ const Closet = () => {
 
   // Function to handle button click for a specific button index
  // Function to handle button click for a specific button index
-const handleButtonClick = (index) => {
-  setButtonTexts((prevTexts) => {
-    const newTexts = [...prevTexts];
-    newTexts[index] = newTexts[index] === "Place" ? "In-Use" : "Place";
-    return newTexts;
-  });
-
+  const handleButtonClick = (index) => {
+    setButtonTexts((prevTexts) => {
+      const newTexts = [...prevTexts];
+      newTexts[index] = newTexts[index] === "Place" ? "In-Use" : "Place";
+      return newTexts;
+    });
+  
   const selectedItem = buttonsData[index];
   let updatedItems = [];
 
@@ -52,7 +51,7 @@ const handleButtonClick = (index) => {
   // Check if the item is already selected
   const itemIndex = updatedItems.findIndex((item) => item.image === selectedItem.image);
 
-  // If not selected, add it; otherwise, remove it
+  // If not selected add it; otherwise remove it
   if (itemIndex === -1) {
     updatedItems.push(selectedItem);
   } else {
@@ -128,7 +127,6 @@ useEffect(() => {
                     </tr>
                   ))}
               </thead>
-              {/* You can add more table rows and buttons here */}
             </table>
           </div>
 

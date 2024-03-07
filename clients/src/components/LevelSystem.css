@@ -1,27 +1,27 @@
 .level-progress-container {
-    position: relative; /* Needed for absolute positioning of the level */
-    height: 20px;
-    width: 100%;
-    background-color: #e0e0e0; /* Light grey background for the container */
-    border: 10px solid #9381c7; /* Add a border around the progress bar */
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
- 
-  .level-progress-bar {
-    width: 0%; /* Corrected: Added missing semicolon */
-    height: 100%;
-    background-color: #4CAF50; /* Change color as desired */
-    border-radius: 8px; /* Adjust if needed */
-    transition: width 0.3s ease-in-out;
-  }  
- 
-  .current-level-display {
-    position: absolute;
-    right: 0;
-    top: -25px; /* Adjust based on actual layout */
-    background-color: #f8f8f8; /* Light background color */
-    padding: 5px;
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px;
-  }
+  position: relative; /* Positioning of the level */
+  height: 20px;
+  width: 100%;
+  background-color: #e0e0e0; /* Light grey background for the container of progress bar */
+  border: 10px solid #9381c7; /* Adds a border around the progress bar */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.level-progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
+}  
+
+.current-level-display {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  background-color: #f8f8f8;
+  padding: 5px;
+  border: 1px solid #ddd; /* border */
+  border-radius: 5px;
+}

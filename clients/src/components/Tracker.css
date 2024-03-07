@@ -5,9 +5,9 @@ body {
   height: 100%;
   font-family: 'Archivo Black', sans-serif;
   color: #6B5D92;
-  display: flex; /* Added */
-  justify-content: center; /* Added */
-  align-items: center; /* Added */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .oval-button {
   width: 100px;
@@ -19,20 +19,6 @@ body {
   border: none;
 }
 
-/* .full-page-box {
-  position: absolute;
-  width: 60%;
-  height: 100%;
-  background-color: #CEC1FB;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-right: 100px;
-  margin-left: 100px;
-  overflow-y: auto;
-} */
-
 .full-page-box {
   width: 850px;
   height: 100%;
@@ -43,7 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  margin: 0 auto; /* Add this line to center the box horizontally */
+  margin: 0 auto;
 }
 
 hr {
@@ -60,22 +46,22 @@ hr {
 }
 
 .imageSize1 {
-  max-width: 150px; /* Ensures the image doesn't exceed the container's width */
-  max-height: 150px; /* Ensures the image doesn't exceed the container's height */
-  width: auto; /* Ensures the image maintains its aspect ratio */
-  height: auto; /* Ensures the image maintains its aspect ratio */
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
 }
 
 .imageSpace1 {
-  width: 200px; /* Define the width of the container */
-  height: 200px; /* Define the height of the container */
-  overflow: hidden; /* Ensures the image doesn't overflow the container */
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
   margin-top: 60px;
 }
 
 .logos {
   position: fixed;
-  top: 50%; /* Adjust as needed to vertically center the navigation */
+  top: 50%;
   right:100px;
   left: 20px;
   display: flex;
@@ -87,8 +73,8 @@ hr {
 
 .displayInLine {
   display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  justify-content: center;
   padding-top: 20px;
   margin-right: 90px;
 }
@@ -104,7 +90,7 @@ h2{
   text-decoration: #6B5D92;
   font-style:inherit;
   font-weight: bolder;
-  margin-right: 20%; /* Adjust margin as needed */
+  margin-right: 20%;
   margin-top: 10%;
   font-size: 40px;
 }

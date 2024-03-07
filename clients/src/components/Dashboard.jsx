@@ -4,12 +4,10 @@ import UserContext from '../contexts/UserContext';
 import { useContext } from 'react';
 import "./RegistrationForm.css";
 
-
 const Dashboard = () => {
   const navigate = useNavigate();
   const { loggedInUser } = useContext(UserContext);
 
-  // // useEffect with dependency on loggedInUser
   useEffect(() => {
     console.log("Dashboard useEffect triggered");
     console.log("loggedInUser:", loggedInUser);
@@ -29,9 +27,7 @@ const Dashboard = () => {
         <h5>Your First Name: {loggedInUser.firstName} </h5>
         <h5>Your Last Name: {loggedInUser.lastName} </h5>
         <h5>Your Instagram: {loggedInUser.instagram} </h5>
-
         <p>
-
         <button type="button" className="button">
         <Link to="/login">Please Login</Link>!
           </button>{" "}

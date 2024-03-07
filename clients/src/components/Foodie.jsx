@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './DubsTrack.css'; // Assuming your CSS file is named DubsTrack.css
+import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import './Foodie.css';
+import { getCurrentLevel, setCurrentLevel, MAX_LEVEL } from './LevelSystem.jsx';
+import { useNavigate } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
-import { useNavigate } from 'react-router-dom'; // Import useHistory from react-router-dom for navigation
-
+import UserContext from '../contexts/UserContext';
 
 import activatedHome from "../images/nav-bar/activatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
@@ -17,69 +18,167 @@ import basketBall from '../images/athletic-rewards/basketBall.png';
 import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
-function DubsTrack() {
+function Foodie() {
+  const { user } = useContext(UserContext); // Access the user context
+  const userId = user?._id; // Use MongoDB's _id as the unique user identifier  
+  const componentKey = 'Foodie'; // Unique identifier for this track
+  const navigate = useNavigate(); // this fuction is for suggestons buttons
+  const location = useLocation(); // this fuction is for suggestons buttons
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [expandedId, setExpandedId] = useState(null);
 
-    // Use useLocation hook to access location state
-    const location = useLocation();
-    const navigate = useNavigate(); // Correct usage
-    const selectedItem = location.state ? location.state.selectedItem : null;
-    const [suggestion, setSuggestion] = useState('');
-    // const history = useHistory(); // Use useHistory hook for navigation
-  
-    const handleSuggestionChange = (event) => {
-      setSuggestion(event.target.value);
-    };
-    
-    const handleSubmit = (event) => {
-      console.log("Form submitted");
-      event.preventDefault();
-      if (!suggestion.trim()) {
-        console.log("Empty suggestion, not saving");
-        return; // Don't proceed if the suggestion is empty
+  const defaultDubsTrackTasks = [
+    { id: 1, completed: false, label: "Campus Cuisine Tour: Explore different dining options on campus and rate your favorite meals from each location." },
+    { id: 2, completed: false, label: "Cultural Cooking Class: Attend a cooking class focused on a specific cuisine or cultural dish, hosted by a student organization or local chef." },
+    { id: 3, completed: false, label: "Food Truck Frenzy: Sample offerings from various food trucks parked on campus during a designated food truck event." },
+    { id: 4, completed: false, label: "Farmers Market Challenge: Create a meal using only ingredients purchased from the UW Farmers Market, showcasing local and sustainable produce." },
+    { id: 5, completed: false, label: "Culinary Club Cuisine Exploration: Attend a cooking demonstration or tasting event hosted by a culinary-focused RSO on campus. Learn about different cuisines, cooking techniques, and culinary traditions from around the world. Sample diverse flavors and ingredients while connecting with fellow food enthusiasts. Share your favorite recipes or newfound culinary knowledge with friends and consider joining the RSO to further explore your passion for food." },
+  ];
+
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem(`${componentKey}_tasks`);
+    return savedTasks ? JSON.parse(savedTasks) : defaultDubsTrackTasks;
+  });
+
+  const [level, setLevel] = useState(getCurrentLevel(componentKey, userId));
+  const [progressPercentage, setProgressPercentage] = useState(0);
+  const [levelMessage, setLevelMessage] = useState('');
+
+  useEffect(() => {
+    setCurrentLevel(level, componentKey, userId);
+  }, [level]);
+
+  useEffect(() => {
+    localStorage.setItem(`${componentKey}_tasks`, JSON.stringify(tasks));
+  }, [tasks, componentKey, userId]);
+
+  useEffect(() => {
+    let messageTimeout = null;
+    if (level > 0 && level < MAX_LEVEL) {
+      setLevelMessage('Level Up!');
+      setProgressPercentage(100);
+      messageTimeout = setTimeout(() => {
+        setProgressPercentage(0);
+        setLevelMessage('');
+      }, 2000);
+    } else if (level === MAX_LEVEL) {
+      setLevelMessage('Current Max Level Reached: Congrats!');
+      setProgressPercentage(100);
+    }
+    return () => {
+      if (messageTimeout) {
+        clearTimeout(messageTimeout);
       }
-  
-      // Assuming 'suggestions' is the key where you want to save your suggestions
-      const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-      const newSuggestions = [...storedSuggestions, suggestion];
-      localStorage.setItem('suggestions', JSON.stringify(newSuggestions));
-      setSuggestion(''); // Reset suggestion input
-      // Inside your handleSubmit function, just before navigate
-      navigate('/coming-soon', { state: { fromSubmission: true } });
     };
+  }, [level]);
 
+  const handleTaskCompletion = (taskId) => {
+    let updatedTasks = tasks.map(task => {
+      if (task.id === taskId && !task.completed) {
+        if (level < MAX_LEVEL) {
+          setLevel(prevLevel => prevLevel + 1);
+        }
+        return { ...task, completed: true };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
+
+  const toggleExpansion = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  const handleNavIconClick = (event) => {
+    event.stopPropagation();
+  };
+
+  // For testing purposes - a reset level button
+  const resetLevel = () => {
+    setCurrentLevel(0);
+    setLevel(0);
+    setTasks(tasks.map(task => ({ ...task, completed: false })));
+    setProgressPercentage(0);
+    setLevelMessage('');
+  };
+
+  const selectedItem = location.state ? location.state.selectedItem : null;
+  const [suggestion, setSuggestion] = useState('');
+
+  const handleSuggestionChange = (event) => {
+    setSuggestion(event.target.value);
+  };
+ 
+  const handleSubmit = (event) => {
+    console.log("Form submitted");
+    event.preventDefault();
+    if (!suggestion.trim()) {
+      console.log("Empty suggestion, not saving");
+      return;
+    }
+    const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+    const newSuggestions = [...storedSuggestions, suggestion];
+    localStorage.setItem('suggestions', JSON.stringify(newSuggestions));
+    setSuggestion('');
+    navigate('/coming-soon', { state: { fromSubmission: true } });
+  };
 
   return (
     <div className="track-container">
-      <header className="header">
-        <div className="trophy-icon"> <img src={activatedLevels} alt='level display' className='homeLevel' /></div>
-        <div className="level">4</div>
-      </header>
-      <div className="profile">
-        <h3>Dubs</h3>
-      </div>
-      <div className = "avatar">
-      <img src={huskyAvatar} alt="husky"/>
-      <div className="selected-item">
-                {/* Display the selected item's image if selectedItem exists */}
-                {selectedItem && <img src={selectedItem.image} alt="selected item" />}
-            </div>
-      </div>
-
-      <div className='floor-content'>
-        <div className="track-title">
-          <h3>Athletic Track</h3>
+        {/* Level Progress Bar and Level Display */}
+        <button className="reset-level-btn" onClick={resetLevel}>Reset Level</button>
+        <div className="level-progress-container">
+            <div className="level-progress-bar" style={{ width: `${progressPercentage}%` }}></div>
         </div>
-        <ul className="activities">
-          {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>Go on a run on the Burke Gilman Trail</li>
-          <li><input type="checkbox" />Join a sports or fitness-related RSO</li>
-          <li><input type="checkbox" />Friday night skating at the IMA:  Form a team and participate in a relay race during Friday night skating at the IMA</li>
-          <li><input type="checkbox" />UW Sports Game Challenge: Attend at least three different UW sports games in a semester</li>
-          <li><input type="checkbox" />Attend Adventure Club Expedition: Participate in activities such as hiking, rock climbing, kayaking, or camping</li>
-        </ul>
-      </div>
-
-      {/* Additional content with logos */}
+        <div className="current-level-display">Level: {level}</div>
+        {levelMessage && <div className="level-up-message">{levelMessage}</div>}
+        <header className="header">
+            <div className="trophy-icon">
+                <img src={activatedLevels} alt="level display" className="homeLevel" />
+            </div>
+            <div className="level">{level}</div>
+        </header>
+        <div className="profile">
+            <h3>Dubs</h3>
+        </div>
+        <div className="avatar">
+            <img src={huskyAvatar} alt="husky" />
+            <div className="selected-items">
+                {selectedItems.map((item, index) => (
+                    <img key={index} src={item.image} alt={`selected item ${index}`} />
+                ))}
+            </div>
+        </div>
+        <div className="floor-content">
+            <h3>Foodie Track</h3>
+            <ul className="activities">
+            {tasks.map((task) => (
+                <li key={task.id} className={`task-item ${task.completed ? "completed" : ""}`}>
+                <div className="checkbox-container">
+                    <input
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => handleTaskCompletion(task.id)}
+                    />
+                </div>
+                <div
+                    className="task-label"
+                    onClick={() => toggleExpansion(task.id)}
+                >
+                    {expandedId === task.id ? (
+                    <span>{task.label} <span className="read-more">Read Less</span></span>
+                    ) : (
+                    <span>
+                        {task.label.length > 100 ? `${task.label.substring(0, 100)}... ` : task.label}
+                        {task.label.length > 100 && <span className="read-more">Read More</span>}
+                    </span>
+                    )}
+                </div>
+                </li>
+            ))}
+            </ul>
+        </div>
       <section className="logos">
         <div>
         <Link to="/">
@@ -118,7 +217,6 @@ function DubsTrack() {
               </Link>
         </div>
       </section>
-
       <div className="suggestion-box">
         <h3>Add Your Challenge Suggestion</h3>
         <form onSubmit={handleSubmit}>
@@ -133,8 +231,7 @@ function DubsTrack() {
         </form>
       </div>
     </div>
-
   );
 }
 
-export default DubsTrack;
+export default Foodie;

@@ -79,23 +79,20 @@ const RegistrationForm = () => {
         console.error("Server response status:", error.response.status);
         console.error("Server response data:", error.response.data);
 
-        // Handle errors based on your server's response
-        // For example, update the state with specific error messages
+        // Handle errors based on server's response
+        // update the state with specific error messages
         setFormDataError((prevErrorObj) => {
           const newErrorObj = { ...prevErrorObj };
-
           // Clear all previous errors
           for (const fieldName in newErrorObj) {
             newErrorObj[fieldName] = "";
           }
-
           // Set errors based on the response
           for (const fieldName in error.response.data.errors) {
             if (newErrorObj.hasOwnProperty(fieldName)) {
               newErrorObj[fieldName] = error.response.data.errors[fieldName];
             }
           }
-
           return newErrorObj;
         });
       } else {

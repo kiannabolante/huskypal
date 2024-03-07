@@ -28,11 +28,9 @@ const Header = ({ handleLogout }) => {
 
   return (
     <div className="header">
-
-      {/* Other header content */}
       {loggedInUser._id && <button onClick={handleLogoutClick}>Back to Registration</button>}
     </div>
   );
 };
 
-export default Header
+export default Header;

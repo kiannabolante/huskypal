@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './Creative.css'
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import './Studious.css';
+import { getCurrentLevel, setCurrentLevel, MAX_LEVEL } from './LevelSystem.jsx';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+import UserContext from '../contexts/UserContext';
 
 
 import activatedHome from "../images/nav-bar/activatedHome.png";
@@ -18,67 +20,166 @@ import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function Studious() {
-  const navigate = useNavigate(); // Correct usage
-  // Use useLocation hook to access location state
+  const { user } = useContext(UserContext);
+  const userId = user?._id;
+  const componentKey = 'Studious';
+  const navigate = useNavigate();
   const location = useLocation();
-  const selectedItem = location.state ? location.state.selectedItem : null;
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [expandedId, setExpandedId] = useState(null);
 
+  const defaultDubsTrackTasks = [
+    { id: 1, completed: false, label: "CLUE Study Center Quest: Attend CLUE study center during designated hours throughout the quarter" },
+    { id: 2, completed: false, label: "Office Hour Mastery: Attend office hours for at least one of your courses every week for a semester" },
+    { id: 3, completed: false, label: "Weekly Study Group Challenge: Form a study group with classmates and commit to meeting regularly to review course material and prepare for exams" },
+    { id: 4, completed: false, label: "Lecture Attendance Streak: Attend all lectures for a selected course for an entire week without missing a single session" },
+    { id: 5, completed: false, label: "Research Symposium: Participate in or attend a research symposium on campus, showcasing student and faculty research across various disciplines" },
+  ];
+
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem(`${componentKey}_tasks`);
+    return savedTasks ? JSON.parse(savedTasks) : defaultDubsTrackTasks;
+  });
+
+  const [level, setLevel] = useState(getCurrentLevel(componentKey, userId));
+  const [progressPercentage, setProgressPercentage] = useState(0);
+  const [levelMessage, setLevelMessage] = useState('');
+
+  useEffect(() => {
+    setCurrentLevel(level, componentKey, userId);
+  }, [level]);
+
+  useEffect(() => {
+    localStorage.setItem(`${componentKey}_tasks`, JSON.stringify(tasks));
+  }, [tasks, componentKey, userId]);
+
+  useEffect(() => {
+    let messageTimeout = null;
+    if (level > 0 && level < MAX_LEVEL) {
+      setLevelMessage('Level Up!');
+      setProgressPercentage(100);
+      messageTimeout = setTimeout(() => {
+        setProgressPercentage(0);
+        setLevelMessage('');
+      }, 2000);
+    } else if (level === MAX_LEVEL) {
+      setLevelMessage('Current Max Level Reached: Congrats!');
+      setProgressPercentage(100);
+    }
+    return () => {
+      if (messageTimeout) {
+        clearTimeout(messageTimeout);
+      }
+    };
+  }, [level]);
+
+  const handleTaskCompletion = (taskId) => {
+    let updatedTasks = tasks.map(task => {
+      if (task.id === taskId && !task.completed) {
+        if (level < MAX_LEVEL) {
+          setLevel(prevLevel => prevLevel + 1);
+        }
+        return { ...task, completed: true };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
+
+  const toggleExpansion = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  const handleNavIconClick = (event) => {
+    event.stopPropagation();
+  };
+
+  // For testing purposes - a reset level button
+  const resetLevel = () => {
+    setCurrentLevel(0);
+    setLevel(0);
+    setTasks(tasks.map(task => ({ ...task, completed: false })));
+    setProgressPercentage(0); 
+    setLevelMessage('');
+  };
+
+  const selectedItem = location.state ? location.state.selectedItem : null;
   const [suggestion, setSuggestion] = useState('');
-  // const history = useHistory(); // Use useHistory hook for navigation
 
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };
-  
+ 
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
     if (!suggestion.trim()) {
       console.log("Empty suggestion, not saving");
-      return; // Don't proceed if the suggestion is empty
+      return;
     }
 
-    // Assuming 'suggestions' is the key where you want to save your suggestions
     const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
     const newSuggestions = [...storedSuggestions, suggestion];
     localStorage.setItem('suggestions', JSON.stringify(newSuggestions));
-    setSuggestion(''); // Reset suggestion input
-    // Inside your handleSubmit function, just before navigate
+    setSuggestion('');
     navigate('/coming-soon', { state: { fromSubmission: true } });
   };
 
   return (
     <div className="track-container">
-      <header className="header">
-        <div className="trophy-icon"> <img src={activatedLevels} alt='level display' className='homeLevel' /></div>
-        <div className="level">4</div>
-      </header>
-      <div className="profile">
-        <h3>Dubs</h3>
-      </div>
-      <div className = "avatar">
-      <img src={huskyAvatar} alt="husky"/>
-      <div className="selected-item">
-                {/* Display the selected item's image if selectedItem exists */}
-                {selectedItem && <img src={selectedItem.image} alt="selected item" />}
-            </div>
-      </div>
-
-      <div className='floor-content'>
-        <div className="track-title">
-          <h3>Studious Track</h3>
+        <button className="reset-level-btn" onClick={resetLevel}>Reset Level</button>
+        <div className="level-progress-container">
+            <div className="level-progress-bar" style={{ width: `${progressPercentage}%` }}></div>
         </div>
-        <ul className="activities">
-          {/* Added checkboxes before each list item */}
-          <li className="completed"><input type="checkbox"/>CLUE Study Center Quest: Attend CLUE study center during designated hours throughout the quarter</li>
-          <li><input type="checkbox" />Office Hour Mastery: Attend office hours for at least one of your courses every week for a semester</li>
-          <li><input type="checkbox" />Weekly Study Group Challenge: Form a study group with classmates and commit to meeting regularly to review course material and prepare for exams</li>
-          <li><input type="checkbox" />Lecture Attendance Streak: Attend all lectures for a selected course for an entire week without missing a single session</li>
-          <li><input type="checkbox" />Research Symposium: Participate in or attend a research symposium on campus, showcasing student and faculty research across various disciplines</li>
-        </ul>
-      </div>
-
-      {/* Additional content with logos */}
+        <div className="current-level-display">Level: {level}</div>
+        {levelMessage && <div className="level-up-message">{levelMessage}</div>}
+        <header className="header">
+            <div className="trophy-icon">
+                <img src={activatedLevels} alt="level display" className="homeLevel" />
+            </div>
+            <div className="level">{level}</div>
+        </header>
+        <div className="profile">
+            <h3>Dubs</h3>
+        </div>
+        <div className="avatar">
+            <img src={huskyAvatar} alt="husky" />
+            <div className="selected-items">
+                {selectedItems.map((item, index) => (
+                    <img key={index} src={item.image} alt={`selected item ${index}`} />
+                ))}
+            </div>
+        </div>
+        <div className="floor-content">
+            <h3>Studious Track</h3>
+            <ul className="activities">
+            {tasks.map((task) => (
+                <li key={task.id} className={`task-item ${task.completed ? "completed" : ""}`}>
+                <div className="checkbox-container">
+                    <input
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => handleTaskCompletion(task.id)}
+                    />
+                </div>
+                <div
+                    className="task-label"
+                    onClick={() => toggleExpansion(task.id)}
+                >
+                    {expandedId === task.id ? (
+                    <span>{task.label} <span className="read-more">Read Less</span></span>
+                    ) : (
+                    <span>
+                        {task.label.length > 100 ? `${task.label.substring(0, 100)}... ` : task.label}
+                        {task.label.length > 100 && <span className="read-more">Read More</span>}
+                    </span>
+                    )}
+                </div>
+                </li>
+            ))}
+            </ul>
+        </div>
       <section className="logos">
         <div>
         <Link to="/">
@@ -117,7 +218,6 @@ function Studious() {
               </Link>
         </div>
       </section>
-
       <div className="suggestion-box">
         <h3>Add Your Challenge Suggestion</h3>
         <form onSubmit={handleSubmit}>
@@ -132,7 +232,6 @@ function Studious() {
         </form>
       </div>
     </div>
-
   );
 }
 

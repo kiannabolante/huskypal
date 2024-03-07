@@ -1,5 +1,4 @@
-import "./Aboutus.css"; // Assuming your CSS file is named DubsTrack.css
-// import UserContext from '../contexts/UserContext';
+import "./Aboutus.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import appIcon from "../images/appIcon.png";
@@ -8,7 +7,6 @@ import UserContext from "../contexts/UserContext";
 
 const AllAboutUs = () => {
   const { loggedInUser } = useContext(UserContext);
-  // const {loggedInUser} = useContext(UserContext);
   console.log(loggedInUser);
   return (
     <div className="aboutUsContainer">

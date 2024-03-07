@@ -7,7 +7,6 @@
   margin: auto;
 }
 
-
 /*Title */
 .trait-header {
   color: #9381c7;
@@ -16,7 +15,7 @@
   text-align: center;
 }
 
-/* the border/box of the rait-option */
+/* the border/box of the trait-option */
 .trait-option {
   display: flex;
   align-items: center;
@@ -28,11 +27,6 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* .trait-option input[type='radio'] {
-    margin-right: 10px;
-    accent-color: #4a2ab3;
-  } */
-
 .trait-option label {
   color: #fcfcfc;
   font-weight: bold;
@@ -40,7 +34,6 @@
   flex-grow: 1;
 }
 
-/* Additional styles for radio button customization or customization the checklist box*/
 .trait-option input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -55,7 +48,6 @@
   position: relative;
 }
 
-/* Style for when the radio button is checked */
 .trait-option input[type="radio"]:checked {
   background-color: #6e5baa;
   border-color: #d5d1e5;
@@ -71,7 +63,7 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-/* Slightly darker on hover for feedback */
+/* Slightly darker on hover */
 button[type="submit"]:hover {
   background-color: #9381c7;
 }
@@ -91,7 +83,6 @@ button[type="submit"]:hover {
   gap: 10px;
 }
 
-/* Existing styles */
 .overlay {
   position: fixed;
   top: 0;

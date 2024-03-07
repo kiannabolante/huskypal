@@ -20,7 +20,7 @@
   
   /* Styles for the suggestions list for better readability */
   .coming-soon-suggestions ul {
-    list-style-type: none; /* Removes default list bullet points */
+    list-style-type: none;
     padding: 0;
     margin: 20px 0;
   }
@@ -42,20 +42,3 @@
   .coming-soon-suggestions li:hover {
     background-color: #f0f0f0;
   }
-  
-  /* .clear-suggestions-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #f44336; /* A vivid color to indicate a clear/reset action */
-    /* border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  } */
-  
-  /* .clear-suggestions-btn:hover {
-    background-color: #d32f2f; /* Darker shade for hover effect */
-  /* }  */ 
-  

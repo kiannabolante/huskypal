@@ -13,18 +13,12 @@ import basketBall from '../images/athletic-rewards/basketBall.png'
 import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
-
 const Tracker = () => {
   return (
     <div style={{ backgroundColor: "#F8F3E2" }}>
       {/* Rewards and Levels */}
       <div className="full-page-box">
       <h1> Track Milestones </h1>
-        {/* <h3>LEVEL</h3>
-        <div className='wholeLevel'>
-          <div className="trophyLevel"> <img src={activatedLevels} alt='level display' className='levelDisplay imageSpace1' /></div>
-          <div className="levelTrack">4</div>
-        </div> */}
         <p> Complete more challenges, gain more levels,
           unlock more rewards!
         </p>
