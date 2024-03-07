@@ -168,16 +168,17 @@ function Creative() {
       </div>
       <div className="current-level-display">Level: {level}</div>
       {levelMessage && <div className="level-up-message">{levelMessage}</div>}
-      <header className="header" style={{ marginTop: "-80px" }}>
+      <header className="header" style={{ marginTop: "5px" }}>
         <div className="trophy-icon">
           <img
             src={activatedLevels}
             alt="level display"
             className="homeLevel"
           />
-        </div>
-        <div className="level" style={{ marginTop: "-62px", fontSize: "18px" }}>
+
+        <div className="level" style={{ marginTop: "-54px", fontSize: "18px" }}>
           {level}
+        </div>
         </div>
       </header>
       <div className="profile">

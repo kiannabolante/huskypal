@@ -120,6 +120,7 @@
   width: 200px; /* Set the desired width for the avatar */
   height: auto; /* Maintain the aspect ratio */
   margin-bottom: 10px; /* Add some space between the avatar and the selected items */
+  margin-left: 60px;
 }
 
 .avatar-container {
@@ -134,4 +135,9 @@
   height: auto; /* Maintain the aspect ratio */
   margin-right: 10px; /* Add some spacing between selected items */
   margin-bottom: -30px;
+}
+
+.trophy-icon img {
+  width: 70px; /* Set the desired width for the trophy icon */
+  height: auto; /* Maintain the aspect ratio */
 }
