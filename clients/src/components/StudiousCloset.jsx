@@ -109,12 +109,12 @@ useEffect(() => {
                           />
                           {/* Pass the selected item's information through the Link component */}
                           <Link
-                            to="/user/todolist"
+                            to="/studious"
                             state={{ selectedItem: button }}
                           >
                             <button
                               type="button"
-                              className="oval-button"
+                              className="button"
                               onClick={() =>
                                 handleButtonClick(rowIndex * 2 + colIndex)
                               }

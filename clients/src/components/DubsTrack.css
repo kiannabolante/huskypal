@@ -15,31 +15,46 @@
   box-sizing: border-box;
 }
 
-.activities {
-  list-style: none;
-  padding: 0;
-}
+  .activities {
+    list-style: none;
+    padding: 0;
+  }
 
+
+
+
+/* make the box board */
 .activities li {
-  background-color: #9381C7;
+  background-color: #9381c7;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
   color: #fff;
+  display: flex; /* Use flexbox for aligning checkbox and text */
+  align-items: center; /* Center items vertically */
 }
 
-.avatar img {
-  width: 150px;
-  margin-bottom: -20px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-}
+  .avatar img {
+    width: 150px; /* Adjust the width of the image */
+    margin-bottom: -20px;
+    height: auto; /* Maintain aspect ratio */
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center; /* Center the items horizontally */
+  }
 
+
+
+
+  /* Reset margin for h1 within floor-content */
 .floor-content h1 {
   margin: 0;
 }
+
+
+
+
+
+
 
 .profile {
   margin-bottom: 20px;
@@ -69,6 +84,60 @@
   margin-left: -15px;
 }
 
+
+
+
+/* Styles for the activities list */
+.activities {
+  list-style-type: none; /* Removes default list styling */
+  padding-left: 0; /* Removes default padding */
+}
+
+
+
+
+/* Styles for each activity item */
+.activities li {
+  display: flex; /* Use flexbox for aligning checkbox and text */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Add some space between list items */
+  background-color: #9381C7; /* Background color for list item */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside each list item */
+  border-radius: 5px; /* Rounded corners for the list items */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+
+
+
+
+
+
+/* Styles for the activities list */
+.activities {
+  list-style-type: none; /* Removes default list styling */
+  padding-left: 0; /* Removes default padding */
+}
+
+
+
+
+/* Styles for each activity item */
+.activities li {
+  display: flex; /* Use flexbox for aligning checkbox and text */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Add some space between list items */
+  background-color: #9381C7; /* Background color for list item */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside each list item */
+  border-radius: 5px; /* Rounded corners for the list items */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+
+
+
 .activities {
   list-style-type: none;
   padding-left: 0;
@@ -86,26 +155,22 @@
 }
 
 .activities li input[type="checkbox"] {
-  margin-right: 10px;
-  cursor: pointer;
+  margin-right: 10px; /* Space between checkbox and text */
+  cursor: pointer; /* Changes cursor to pointer on hover over the checkbox */
 }
 
-.activities {
-  list-style-type: none;
-  padding-left: 0;
-}
-
+/* Styles for each activity item */
 .activities li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  background-color: #9381C7;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  overflow: hidden;
+  display: flex; /* Use flexbox for aligning checkbox and text */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Add some space between list items */
+  background-color: #9381c7; /* Background color for list item */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside each list item */
+  border-radius: 5px; /* Rounded corners for the list items */
+  overflow: hidden; /* Prevents overall overflow */
 }
+
 
 .activities li .checkbox-container {
   display: flex;
@@ -115,10 +180,12 @@
   margin-right: 10px;
 }
 
+
 .activities li input[type="checkbox"] {
   cursor: pointer;
   transform: scale(1);
 }
+
 
 .activities li label {
   white-space: nowrap;
@@ -126,6 +193,7 @@
   text-overflow: ellipsis;
   flex-grow: 1;
 }
+
 
 .activities li input[type="checkbox"] {
   margin-right: 10px;
@@ -138,45 +206,53 @@
   color: white;
 }
 
+
+
+
 .activities li input[type="checkbox"]:checked + label {
   text-decoration: line-through;
 }
 
+
 .level-progress-container {
-  height: 20px;
-  width: 100%;
-  background-color: #fffcf2;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 20px; /* Height of the progress bar container */
+  width: 100%; /* Whether it reaches the edge of the */
+  background-color: #fffcf2; /* Background color for the container */
+  border-radius: 10px; /* Rounded corners for the container */
   border: 3px solid #9381c7;
 }
 
 .level-progress-bar {
-  height: 100%;
-  background-color: #CEC1FB;
-  border-radius: 8px;
-  transition: width 0.3s ease-in-out;
+  height: 100%; /* height of its container */
+  background-color: #cec1fb; /* Progress bar */
+  border-radius: 8px; /* Rounded corners for the progress bar */
+  transition: width 0.3s ease-in-out; /* Smooth transition for when it decreases or increases */
 }
 
 /* Navigation Icons Container */
 .logos {
-  position: fixed;
-  right: 70px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-  width: auto;
-  height: auto;
-  pointer-events: none;
+  position: fixed; /* Fixed position relative to the viewport */
+  right: 70px; /* Align to the right edge of the viewport */
+  top: 50%; /* Initially position in the middle to then adjust to center the icons vertically */
+  transform: translateY(-50%); /* Center the container vertically */
+  z-index: 1000; /* High z-index to ensure it's above other content */
+
+  /* Reset potential conflicting styles */
+  width: auto; /* Only as wide as its content */
+  height: auto; /* Only as tall as its content */
+  pointer-events: none; /* Prevent the container from capturing clicks */
 }
 
 /* Style for individual icons within the navigation */
 .logos img {
   width: 50px;
   height: auto;
-  cursor: pointer; 
+  cursor: pointer;
   margin: 10px 0;
 }
+
+
+
 
 /* Pointer-events to ensure only the icons are clickable and not the entire container */
 .logos img {

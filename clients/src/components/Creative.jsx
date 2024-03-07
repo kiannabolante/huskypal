@@ -105,6 +105,16 @@ function Creative() {
   const selectedItem = location.state ? location.state.selectedItem : null;
   const [suggestion, setSuggestion] = useState('');
 
+  useEffect(() => {
+    console.log("Retrieving selected items from localStorage");
+    const storedItems = localStorage.getItem("selectedItems");
+    if (storedItems) {
+        setSelectedItems(JSON.parse(storedItems));
+    } else {
+        console.log("No selected items found in localStorage");
+    }
+}, []);
+
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };

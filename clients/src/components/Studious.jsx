@@ -12,11 +12,6 @@ import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 import huskyAvatar from "../images/huskyAvatar.png";
 import activatedLevels from "../images/nav-bar/activatedLevels.png";
-import baseBallAndMit from '../images/athletic-rewards/baseBallAndMit.png';
-import tennisBall from '../images/athletic-rewards/tennisBall.png';
-import basketBall from '../images/athletic-rewards/basketBall.png';
-import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
-import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function Studious() {
   const { user } = useContext(UserContext);
@@ -105,6 +100,16 @@ function Studious() {
 
   const selectedItem = location.state ? location.state.selectedItem : null;
   const [suggestion, setSuggestion] = useState('');
+
+  useEffect(() => {
+    console.log("Retrieving selected items from localStorage");
+    const storedItems = localStorage.getItem("selectedItems");
+    if (storedItems) {
+        setSelectedItems(JSON.parse(storedItems));
+    } else {
+        console.log("No selected items found in localStorage");
+    }
+}, []);
 
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
