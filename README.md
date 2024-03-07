@@ -41,12 +41,15 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
  12. Run `npm install cor`
  13. Run `nodemon server.js`
 
-# Testing
-[GitHub Actions Tutorial](https://youtu.be/ylEy4eLdhFs?feature=shared)
- - Github actions: feature in GitHub to create custom automated workflows
+# Testing (Continuous Integration (CI))
+We use GitHub Actions to automatically run our tests every time we make changes to our code on GitHub. 
+This way, we catch any issues quickly before they become a problem.
+
+- [GitHub Actions Tutorial](https://youtu.be/ylEy4eLdhFs?feature=shared)
+
  ##Setup
  1. Signup and login into github.com
- 2. In repo, create folder .github/workflows
+ 2. In repo, create a folder .github/workflows
     - Actions tab, click ‘set up a workflow yourself’
     - Can name the yaml file anything
  4. In the folder, create a YAML file with a .yml extension
@@ -61,11 +64,46 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
  ### Demo
  [GitHub Actions workflow file](https://github.com/kiannabolante/huskypal/blob/main/.github/workflows/huskypal2.yml)
 
+## Development Tools
+- **Visual Studio Code**: Integrated Development Environment (IDE)
+- **Git, GitHub**: Version control system and hosting platform for repositories
+- **npm**: Package manager for JavaScript
+- **ThunderClient**: API testing tool
+- **Chrome**: Web browser for testing
+- **Node.js**: JavaScript runtime environment
+- **Express**: Web application framework for Node.js (if applicable)
+- **CORS (Cross-Origin Resource Sharing)**: Mechanism that allows restricted resources on a web page to be requested from another domain
+- **MongoDB Compass**: GUI for MongoDB
 
-### Another option: If you want to use javascript here is the setup
-- Test-automation Infrastructure setup:
-- Install Jest by running npm install --save-dev jest.
-- Add a script to your package.json to run Jest:
+## Frontend
+### React
+- **Component-based architecture**: Divides the UI into reusable components
+- **Virtual DOM for performance**: Improves efficiency by updating only changed components
+- **Reusable and maintainable code**
+
+### Styling
+- **CSS**: Cascading Style Sheets
+- **Bootstrap**: Front-end framework for designing websites and web applications
+- **Google Fonts**: Library of free licensed font families
+
+### Frontend Validation Testing
+- **Unit Testing with Jest**
+- **Component Testing with React Testing Library**: For testing React components
+- **Frontend validation**
+  
+## Backend
+
+- **Node.js (Express - if applicable)**: Server-side JavaScript framework
+- **JavaScript**: Programming language
+- **Database: MongoDB**: NoSQL, document-oriented database
+  - **Flexible schema, scalability**
+
+### Backend Validation Testing
+- **Unit Testing with Jest**
+- **Mocha**: JavaScript testing framework
+- **Backend Validation Tests**
+- **MongoDB Data Validation**
+
 
 
 
