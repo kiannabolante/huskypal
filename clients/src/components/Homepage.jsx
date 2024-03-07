@@ -6,7 +6,6 @@ import deactivatedHome from "../images/nav-bar/deactivatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import activatedCloset from "../images/nav-bar/activatedCloset.png";
-import huskyAvatar from "../images/huskyAvatar.png";
 
 function TraitBox() {
   const [selectedTrait, setSelectedTrait] = useState('');
