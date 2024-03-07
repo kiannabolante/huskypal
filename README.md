@@ -47,7 +47,7 @@ This way, we catch any issues quickly before they become a problem.
 
 - [GitHub Actions Tutorial](https://youtu.be/ylEy4eLdhFs?feature=shared)
 
- ##Setup
+ ## Setup
  1. Signup and login into github.com
  2. In repo, create a folder .github/workflows
     - Actions tab, click ‘set up a workflow yourself’
