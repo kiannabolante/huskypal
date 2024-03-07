@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './Homepage.css';
+import './Homepage.css'; // Assuming the import path is correct
 
-import deactivatedHome from "../images/nav-bar/deactivatedHome.png";
+import activatedHome from "../images/nav-bar/activatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
-import activatedCloset from "../images/nav-bar/activatedCloset.png";
+import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 
 function TraitBox() {
   const [selectedTrait, setSelectedTrait] = useState('');
@@ -24,7 +24,7 @@ function TraitBox() {
         navigate('/studious');
         break;
       case 'athletic':
-        navigate('/user/todolist');
+        navigate('/athletic');
         break;
       default:
         navigate('/home'); // Default navigation if no trait is selected or another value is provided
@@ -36,22 +36,22 @@ function TraitBox() {
       {/* Navigation Bar */}
       <section className="logos">
         <div>
-          <Link to="/">
-            <img src={deactivatedHome} alt="home button to get to home page" className="imageSize imageSpace" />
+          <Link to="/home">
+            <img src={activatedHome} alt="home button to get to home page" className="imageSize imageSpace" />
           </Link>
         </div>
         <div>
-          <Link to="/user/accessories">
-            <img src={activatedCloset} alt="closet button to see accessories" className="imageSize imageSpace" />
+          <Link to="/athletic/closet">
+            <img src={deactivatedCloset} alt="closet button to see accessories" className="imageSize imageSpace" />
           </Link>
         </div>
         <div>
-          <Link to="/user/level">
+          <Link to="/athletic/milestone">
             <img src={deactivatedLevels} alt="levels button to see progress and rewards" className="imageSize imageSpace" />
           </Link>
         </div>
         <div>
-          <Link to="/user/pal">
+          <Link to="/pal">
             <img src={deactivatedPals} alt="pals button to connect with others" className="imageSize imageSpace" />
           </Link>
         </div>
@@ -87,4 +87,3 @@ function TraitBox() {
 }
 
 export default TraitBox;
-
