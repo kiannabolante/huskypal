@@ -64,7 +64,7 @@ const TrackPal = () => {
             {/* Navigation Bar */}
             <section className="logos">
         <div>
-          <Link to="/user/todolist">
+          <Link to="/home">
             <img
               src={deactivatedHome}
               alt="home button to get to home page"
@@ -73,7 +73,7 @@ const TrackPal = () => {
           </Link>
         </div>
         <div>
-          <Link to="/user/accessories">
+          <Link to="/athletic/closet">
             <img
               src={deactivatedCloset}
               alt="closet button to see accessories "
@@ -82,7 +82,7 @@ const TrackPal = () => {
           </Link>
         </div>
         <div>
-          <Link to="/user/level">
+          <Link to="/athletic/milestone">
             <img
               src={deactivatedLevels}
               alt="levels button to see progress and rewards"
@@ -91,7 +91,7 @@ const TrackPal = () => {
           </Link>
         </div>
         <div>
-          <Link to="/user/pal">
+          <Link to="/pal">
             <img
               src={activatedPals}
               alt="pals button to connect with others"
