@@ -19,11 +19,11 @@ import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
 import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function Foodie() {
-  const { user } = useContext(UserContext); // Access the user context
-  const userId = user?._id; // Use MongoDB's _id as the unique user identifier  
-  const componentKey = 'Foodie'; // Unique identifier for this track
-  const navigate = useNavigate(); // this fuction is for suggestons buttons
-  const location = useLocation(); // this fuction is for suggestons buttons
+  const { user } = useContext(UserContext);
+  const userId = user?._id; 
+  const componentKey = 'Foodie';
+  const navigate = useNavigate();
+  const location = useLocation();
   const [selectedItems, setSelectedItems] = useState([]);
   const [expandedId, setExpandedId] = useState(null);
 

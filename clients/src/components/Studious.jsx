@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 import UserContext from '../contexts/UserContext';
 
-
 import activatedHome from "../images/nav-bar/activatedHome.png";
 import deactivatedPals from "../images/nav-bar/deactivatedPals.png";
 import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
