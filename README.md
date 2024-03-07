@@ -12,7 +12,7 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
 | Fana Hagos     | Frontend/Backend + Design  | - Develop track selection, homepage, and challenge suggestion pages<br>- Testing<br>- Some backend|
 | Ramla Abdi     | Backend/Frontend   | - Implement level system for user challenges<br>- Backend and frontend tasks related to challenge tracking |
 | Kianna Bolante | Frontend Design    | - Design frontend interfaces<br>- Work on closet pages          |
-| Fatuma Meshalla| Backend/Frontend   | - Implement login and registration pages<br>- Database setup<br>- Testing<br>- GitHub setup |
+| Fatuma Meshalla| Backend/Frontend   | - Implement login and registration and social connect,  pages<br>- Database setup<br>- Testing<br>- GitHub setup |
 
 
 # Developer's Guide
