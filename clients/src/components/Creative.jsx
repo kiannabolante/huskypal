@@ -30,7 +30,7 @@ function Creative() {
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };
-  
+
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
@@ -82,7 +82,7 @@ function Creative() {
       {/* Additional content with logos */}
       <section className="logos">
         <div>
-        <Link to="/">
+        <Link to="/creative">
           <img
             src={activatedHome}
             alt="home button to get to home page"

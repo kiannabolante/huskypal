@@ -136,7 +136,7 @@ useEffect(() => {
           <section className="logos">
             <div>
               {/* Link to home page */}
-              <Link to="/">
+              <Link to="/user/todolist">
                 <img
                   src={deactivatedHome}
                   alt="home button to get to home page"

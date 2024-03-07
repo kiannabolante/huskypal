@@ -30,7 +30,7 @@ const Header = ({ handleLogout }) => {
     <div className="header">
 
       {/* Other header content */}
-      {loggedInUser._id && <button onClick={handleLogoutClick}>Logout</button>}
+      {loggedInUser._id && <button onClick={handleLogoutClick}>Back to Registration</button>}
     </div>
   );
 };

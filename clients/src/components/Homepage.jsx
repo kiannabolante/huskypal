@@ -197,7 +197,7 @@ function TraitBox() {
         navigate('/user/todolist');
         break;
       default:
-        navigate('/'); // Default navigation if no trait is selected or another value is provided
+        navigate('/home'); // Default navigation if no trait is selected or another value is provided
     }
   };
 

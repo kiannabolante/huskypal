@@ -11,12 +11,12 @@ import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 function ComingSoon() {
     const location = useLocation(); // Use useLocation hook to access the navigation state
     const [suggestions, setSuggestions] = useState([]);
-  
+
     useEffect(() => {
       const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
       setSuggestions(storedSuggestions);
     }, []);
-  
+
     // Check if the user navigated here after submitting a suggestion
     const fromSubmission = location.state?.fromSubmission;
 
@@ -32,7 +32,7 @@ function ComingSoon() {
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
       {/* Remove the Coming Soon heading and only show Wait to get approved conditionally */}
       {fromSubmission && <h1>Wait to get approved</h1>}
-      
+
       {/* Conditionally display the suggestions list if fromSubmission is true */}
       {fromSubmission && (
         <div>
@@ -44,8 +44,8 @@ function ComingSoon() {
         </div>
       )}
 
-       {/* Button to clear all suggestions */}
-       <button onClick={clearSuggestions} className="clear-suggestions-btn">Clear All Suggestions</button>
+       {/* Button to clear all suggestions
+       <button onClick={clearSuggestions} className="clear-suggestions-btn">Clear All Suggestions</button> */}
 
         {/* Additional content with logos */}
         <section className="logos">

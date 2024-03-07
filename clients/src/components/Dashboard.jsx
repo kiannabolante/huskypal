@@ -23,7 +23,8 @@ const Dashboard = () => {
     <div>
       <form action="" className="col-med-4 offset display-info" style={{backgroundColor: "#CEC1FB", padding: "40px", borderRadius: "10px"}}>
         <h3>Thank you for registering with us, {loggedInUser.firstName}!</h3>
-        <p>Here is your profile information:</p>
+        <p>Please re-register to update your information. </p>
+          <p>Here is what we have for your profile information right now:</p>
         <h5>Your Email: {loggedInUser.email} </h5>
         <h5>Your First Name: {loggedInUser.firstName} </h5>
         <h5>Your Last Name: {loggedInUser.lastName} </h5>
