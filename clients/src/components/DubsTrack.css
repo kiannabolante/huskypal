@@ -1,142 +1,15 @@
 .track-container {
   min-height: 100%;
+  background-color: #f8f3e2;
+  width: 850px;
+  box-shadow: none;
 }
-
-.track-container {
-    background-color: #F8F3E2;
-    width: 350px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
 
 .floor-content {
-  background-color: #CEC1FB;
+  background-color: #cec1fb;
   padding: 20px;
   width: 100%;
-  box-sizing: border-box;
 }
-
-  .activities {
-    list-style: none;
-    padding: 0;
-  }
-
-
-
-
-/* make the box board */
-.activities li {
-  background-color: #9381c7;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  color: #fff;
-  display: flex; /* Use flexbox for aligning checkbox and text */
-  align-items: center; /* Center items vertically */
-}
-
-  .avatar img {
-    width: 150px; /* Adjust the width of the image */
-    margin-bottom: -20px;
-    height: auto; /* Maintain aspect ratio */
-    display: flex; /* Use flexbox to align items horizontally */
-    justify-content: center; /* Center the items horizontally */
-  }
-
-
-
-
-  /* Reset margin for h1 within floor-content */
-.floor-content h1 {
-  margin: 0;
-}
-
-
-
-
-
-
-
-.profile {
-  margin-bottom: 20px;
-  padding: 25px;
-}
-
-.avatar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: -5px;
-}
-
-.homeLevel {
-  max-width: 10%;
-  max-height: 10%;
-  width: auto;
-  height: auto;
-  margin-top: 20%;
-}
-
-.level {
-  margin-top: -38px;
-  font-size: 12px;
-}
-
-.selected-item {
-  margin-left: -15px;
-}
-
-
-
-
-/* Styles for the activities list */
-.activities {
-  list-style-type: none; /* Removes default list styling */
-  padding-left: 0; /* Removes default padding */
-}
-
-
-
-
-/* Styles for each activity item */
-.activities li {
-  display: flex; /* Use flexbox for aligning checkbox and text */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Add some space between list items */
-  background-color: #9381C7; /* Background color for list item */
-  color: white; /* Text color */
-  padding: 10px; /* Padding inside each list item */
-  border-radius: 5px; /* Rounded corners for the list items */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-
-
-
-
-
-
-/* Styles for the activities list */
-.activities {
-  list-style-type: none; /* Removes default list styling */
-  padding-left: 0; /* Removes default padding */
-}
-
-
-
-
-/* Styles for each activity item */
-.activities li {
-  display: flex; /* Use flexbox for aligning checkbox and text */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Add some space between list items */
-  background-color: #9381C7; /* Background color for list item */
-  color: white; /* Text color */
-  padding: 10px; /* Padding inside each list item */
-  border-radius: 5px; /* Rounded corners for the list items */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-
-
 
 .activities {
   list-style-type: none;
@@ -147,45 +20,18 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  background-color: #9381C7;
+  background-color: #9381c7;
   color: white;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-.activities li input[type="checkbox"] {
-  margin-right: 10px; /* Space between checkbox and text */
-  cursor: pointer; /* Changes cursor to pointer on hover over the checkbox */
-}
-
-/* Styles for each activity item */
-.activities li {
-  display: flex; /* Use flexbox for aligning checkbox and text */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Add some space between list items */
-  background-color: #9381c7; /* Background color for list item */
-  color: white; /* Text color */
-  padding: 10px; /* Padding inside each list item */
-  border-radius: 5px; /* Rounded corners for the list items */
-  overflow: hidden; /* Prevents overall overflow */
-}
-
-
-.activities li .checkbox-container {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  flex-grow: 0;
-  margin-right: 10px;
-}
-
 
 .activities li input[type="checkbox"] {
   cursor: pointer;
-  transform: scale(1);
+  margin-right: 10px;
+  width: 70px;
+  height: 50px;
 }
-
 
 .activities li label {
   white-space: nowrap;
@@ -194,72 +40,98 @@
   flex-grow: 1;
 }
 
-
-.activities li input[type="checkbox"] {
-  margin-right: 10px;
-  width: 70px;
-  height: 50px;
-}
-
-.activities li span {
-  cursor: pointer;
-  color: white;
-}
-
-
-
-
 .activities li input[type="checkbox"]:checked + label {
   text-decoration: line-through;
 }
 
-
 .level-progress-container {
-  height: 20px; /* Height of the progress bar container */
-  width: 100%; /* Whether it reaches the edge of the */
-  background-color: #fffcf2; /* Background color for the container */
-  border-radius: 10px; /* Rounded corners for the container */
+  height: 30px;
+  width: 100%;
+  background-color: #fffcf2;
+  border-radius: 10px;
   border: 3px solid #9381c7;
 }
 
 .level-progress-bar {
-  height: 100%; /* height of its container */
-  background-color: #cec1fb; /* Progress bar */
-  border-radius: 8px; /* Rounded corners for the progress bar */
-  transition: width 0.3s ease-in-out; /* Smooth transition for when it decreases or increases */
+  height: 23px;
+  background-color: #cec1fb;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
 }
 
-/* Navigation Icons Container */
 .logos {
-  position: fixed; /* Fixed position relative to the viewport */
-  right: 70px; /* Align to the right edge of the viewport */
-  top: 50%; /* Initially position in the middle to then adjust to center the icons vertically */
-  transform: translateY(-50%); /* Center the container vertically */
-  z-index: 1000; /* High z-index to ensure it's above other content */
-
-  /* Reset potential conflicting styles */
-  width: auto; /* Only as wide as its content */
-  height: auto; /* Only as tall as its content */
-  pointer-events: none; /* Prevent the container from capturing clicks */
+  position: fixed;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  pointer-events: none;
 }
 
-/* Style for individual icons within the navigation */
 .logos img {
   width: 50px;
   height: auto;
   cursor: pointer;
   margin: 10px 0;
-}
-
-
-
-
-/* Pointer-events to ensure only the icons are clickable and not the entire container */
-.logos img {
   pointer-events: auto;
-  margin: 1opx 0;
 }
 
-.logos {
-  pointer-events: none;
+.smallButton {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #6b5d92;
+  color: #fffcf2;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 55px;
+  margin-bottom: 15px;
+}
+
+.smallButton:hover {
+  background-color: #4b3e6d;
+}
+
+.smallButton a {
+  color: #fffcf2;
+  text-decoration: none;
+}
+
+.suggestion-input {
+  font-size: 14px; /* Adjust the font size */
+  line-height: 24px; /* Adjust the line height */
+  padding: 10px; /* Add padding to increase the height of the input field */
+  width: 500px;
+  border-radius: 10px;
+  border-color: #4b3e6d;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the avatar horizontally */
+  margin-top: 20px; /* Adjust the margin from the top as needed */
+}
+
+.avatar img {
+  width: 200px; /* Set the desired width for the avatar */
+  height: auto; /* Maintain the aspect ratio */
+  margin-bottom: 10px; /* Add some space between the avatar and the selected items */
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: -40px;
+  margin-left: 30%;
+}
+
+.selected-item {
+  width: 150px; /* Set the desired width for the selected items */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between selected items */
+  margin-bottom: -30px;
 }

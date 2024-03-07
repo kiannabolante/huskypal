@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './Foodie.css';
+import "./DubsTrack.css";
 import { getCurrentLevel, setCurrentLevel, MAX_LEVEL } from './LevelSystem.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
@@ -132,29 +132,47 @@ function Foodie() {
   return (
     <div className="track-container">
         {/* Level Progress Bar and Level Display */}
-        <button className="reset-level-btn" onClick={resetLevel}>Reset Level</button>
-        <div className="level-progress-container">
-            <div className="level-progress-bar" style={{ width: `${progressPercentage}%` }}></div>
+      <button className="smallButton" onClick={resetLevel}>
+        Reset Level
+      </button>
+      <div className="level-progress-container">
+        <div
+          className="level-progress-bar"
+          style={{ width: `${progressPercentage}%` }}
+        ></div>
+      </div>
+      <div className="current-level-display">Level: {level}</div>
+      {levelMessage && <div className="level-up-message">{levelMessage}</div>}
+      <header className="header" style={{marginTop:"-80px"}}>
+        <div className="trophy-icon">
+          <img
+            src={activatedLevels}
+            alt="level display"
+            className="homeLevel"
+          />
         </div>
-        <div className="current-level-display">Level: {level}</div>
-        {levelMessage && <div className="level-up-message">{levelMessage}</div>}
-        <header className="header">
-            <div className="trophy-icon">
-                <img src={activatedLevels} alt="level display" className="homeLevel" />
-            </div>
-            <div className="level">{level}</div>
-        </header>
-        <div className="profile">
-            <h3>Dubs</h3>
-        </div>
+        <div className="level" style={{marginTop: "-62px", fontSize: "18px"}}>{level}</div>
+      </header>
+      <div className="profile">
+        <br></br>
+        <br></br>
+        <h3>Dubs</h3>
+      </div>
+      <div className="avatar-container">
         <div className="avatar">
-            <img src={huskyAvatar} alt="husky" />
-            <div className="selected-items">
-                {selectedItems.map((item, index) => (
-                    <img key={index} src={item.image} alt={`selected item ${index}`} />
-                ))}
-            </div>
+          <img src={huskyAvatar} alt="husky" />
         </div>
+        <div className="selected-items">
+          {selectedItems.map((item, index) => (
+            <img
+              key={index}
+              src={item.image}
+              alt={`selected item ${index}`}
+              className="selected-item"
+            />
+          ))}
+        </div>
+      </div>
         <div className="floor-content">
             <h3>Foodie Track</h3>
             <ul className="activities">
@@ -183,7 +201,24 @@ function Foodie() {
                 </li>
             ))}
             </ul>
+            <div className="suggestion-box">
+          <h4 style={{ marginTop: "0px", marginBottom: "-5px" }}>
+            Suggest a Challenge!
+          </h4>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={suggestion}
+              onChange={handleSuggestionChange}
+              placeholder="Type your challenge suggestion here..."
+              className="suggestion-input"
+            />
+            <button type="submit" className="button">
+              Submit
+            </button>
+          </form>
         </div>
+      </div>
       <section className="logos">
         <div>
         <Link to="/foodie">
@@ -222,19 +257,6 @@ function Foodie() {
               </Link>
         </div>
       </section>
-      <div className="suggestion-box">
-        <h3>Add Your Challenge Suggestion</h3>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={suggestion}
-            onChange={handleSuggestionChange}
-            placeholder="Type your challenge suggestion here..."
-            className="suggestion-input"
-          />
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
-      </div>
     </div>
   );
 }

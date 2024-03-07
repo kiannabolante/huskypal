@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './Studious.css';
+import './DubsTrack.jsx';
 import { getCurrentLevel, setCurrentLevel, MAX_LEVEL } from './LevelSystem.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
@@ -132,21 +132,33 @@ function Studious() {
 
   return (
     <div className="track-container">
-        <button className="reset-level-btn" onClick={resetLevel}>Reset Level</button>
-        <div className="level-progress-container">
-            <div className="level-progress-bar" style={{ width: `${progressPercentage}%` }}></div>
+        {/* Level Progress Bar and Level Display */}
+      <button className="smallButton" onClick={resetLevel}>
+        Reset Level
+      </button>
+      <div className="level-progress-container">
+        <div
+          className="level-progress-bar"
+          style={{ width: `${progressPercentage}%` }}
+        ></div>
+      </div>
+      <div className="current-level-display">Level: {level}</div>
+      {levelMessage && <div className="level-up-message">{levelMessage}</div>}
+      <header className="header" style={{marginTop:"-80px"}}>
+        <div className="trophy-icon">
+          <img
+            src={activatedLevels}
+            alt="level display"
+            className="homeLevel"
+          />
         </div>
-        <div className="current-level-display">Level: {level}</div>
-        {levelMessage && <div className="level-up-message">{levelMessage}</div>}
-        <header className="header">
-            <div className="trophy-icon">
-                <img src={activatedLevels} alt="level display" className="homeLevel" />
-            </div>
-            <div className="level">{level}</div>
-        </header>
-        <div className="profile">
-            <h3>Dubs</h3>
-        </div>
+        <div className="level" style={{marginTop: "-62px", fontSize: "18px"}}>{level}</div>
+      </header>
+      <div className="profile">
+        <br></br>
+        <br></br>
+        <h3>Dubs</h3>
+      </div>
         <div className="avatar">
             <img src={huskyAvatar} alt="husky" />
             <div className="selected-items">
@@ -183,7 +195,24 @@ function Studious() {
                 </li>
             ))}
             </ul>
+            <div className="suggestion-box">
+          <h4 style={{ marginTop: "0px", marginBottom: "-5px" }}>
+            Suggest a Challenge!
+          </h4>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={suggestion}
+              onChange={handleSuggestionChange}
+              placeholder="Type your challenge suggestion here..."
+              className="suggestion-input"
+            />
+            <button type="submit" className="button">
+              Submit
+            </button>
+          </form>
         </div>
+      </div>
       <section className="logos">
         <div>
         <Link to="/studious">
@@ -222,19 +251,6 @@ function Studious() {
               </Link>
         </div>
       </section>
-      <div className="suggestion-box">
-        <h3>Add Your Challenge Suggestion</h3>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={suggestion}
-            onChange={handleSuggestionChange}
-            placeholder="Type your challenge suggestion here..."
-            className="suggestion-input"
-          />
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
-      </div>
     </div>
   );
 }
