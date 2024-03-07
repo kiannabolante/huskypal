@@ -16,17 +16,17 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
 
 
 # Developer's Guide
- # Setup 
+ ## Setup 
  1. [Download Visual Studio Code](https://code.visualstudio.com/Download)
  2. Clone the repository `git clone` https://github.com/kiannabolante/huskypal.git
 
- # Frontend 
+ ## Frontend 
  1. Open a terminal under the root directory(i.e huskypal)
  2. Run `cd client`
  3. Run `npm install` to make sure all packages are ready for frontend
  5. Run `npm run start`
 
- # Backend
+ ## Backend
  1. [Download MongoDB Compass (https://www.mongodb.com/docs/compass/current/install/)
  2. When signing in for compass use path: (mongodb://127.0.0.1:27017/husky_db)
  3. Install an extension on VS Code: Thunder client
@@ -40,6 +40,33 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
  11. Run `npm install bcrypt jsonwebtoken`
  12. Run `npm install cor`
  13. Run `nodemon server.js`
+
+# Testing
+[GitHub Actions Tutorial](https://youtu.be/ylEy4eLdhFs?feature=shared)
+ - Github actions: feature in GitHub to create custom automated workflows
+ ##Setup
+ 1. Signup and login into github.com
+ 2. In repo, create folder .github/workflows
+    - Actions tab, click ‘set up a workflow yourself’
+    - Can name the yaml file anything
+ 4. In the folder, create a YAML file with a .yml extension
+ 5. In YAML, syntax and spacing is very important so be careful of any copy/paste
+    - Look up ‘yaml formatter’ on google for help
+    - Yaml formatter: https://codebeautify.org/yaml-beautifier
+ 6. Add the content of the workflow in the file
+ 7. Commit and push the changes
+ 8. Got to the repo main page and click the ‘Actions’ tab
+ 9. Select the workflow from left sidebar and check the logs and results
+
+ ###Demo
+ [GitHub Actions Workflow Directory](https://github.com/kiannabolante/huskypal/tree/main/.github/workflows)
+
+## Another option: If you want to use javascript here is the setup
+- Test-automation Infrastructure setup:
+- Install Jest by running npm install --save-dev jest.
+- Add a script to your package.json to run Jest:
+
+
 
 
 
