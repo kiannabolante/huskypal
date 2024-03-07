@@ -12,15 +12,10 @@ import deactivatedLevels from "../images/nav-bar/deactivatedLevels.png";
 import deactivatedCloset from "../images/nav-bar/deactivatedCloset.png";
 import huskyAvatar from "../images/huskyAvatar.png";
 import activatedLevels from "../images/nav-bar/activatedLevels.png";
-import baseBallAndMit from '../images/athletic-rewards/baseBallAndMit.png';
-import tennisBall from '../images/athletic-rewards/tennisBall.png';
-import basketBall from '../images/athletic-rewards/basketBall.png';
-import tennisRacket from '../images/athletic-rewards/tennisRacket.png';
-import basketBallHoop from '../images/athletic-rewards/basketBallHoop.png';
 
 function Foodie() {
   const { user } = useContext(UserContext);
-  const userId = user?._id; 
+  const userId = user?._id;
   const componentKey = 'Foodie';
   const navigate = useNavigate();
   const location = useLocation();
@@ -109,7 +104,7 @@ function Foodie() {
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };
- 
+
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
@@ -181,7 +176,7 @@ function Foodie() {
         </div>
       <section className="logos">
         <div>
-        <Link to="/">
+        <Link to="/foodie">
           <img
             src={activatedHome}
             alt="home button to get to home page"
@@ -190,7 +185,7 @@ function Foodie() {
         </Link>
         </div>
         <div>
-          <Link to="/user/accessories">
+          <Link to="/foodie/closet">
             <img
               src={deactivatedCloset}
               alt="closet button to see accessories "
@@ -199,7 +194,7 @@ function Foodie() {
           </Link>
         </div>
         <div>
-          <Link to="/user/level">
+          <Link to="/foodie/milestone">
             <img
               src={deactivatedLevels}
               alt="levels button to see progress and rewards"
@@ -208,7 +203,7 @@ function Foodie() {
           </Link>
         </div>
         <div>
-        <Link to="/user/pal">
+        <Link to="/pal">
                 <img
                   src={deactivatedPals}
                   alt="pals button to connect with others"

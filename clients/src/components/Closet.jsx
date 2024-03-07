@@ -38,7 +38,7 @@ const Closet = () => {
       newTexts[index] = newTexts[index] === "Place" ? "In-Use" : "Place";
       return newTexts;
     });
-  
+
   const selectedItem = buttonsData[index];
   let updatedItems = [];
 
@@ -134,7 +134,7 @@ useEffect(() => {
           <section className="logos">
             <div>
               {/* Link to home page */}
-              <Link to="/user/todolist">
+              <Link to="/athletic">
                 <img
                   src={deactivatedHome}
                   alt="home button to get to home page"
@@ -144,7 +144,7 @@ useEffect(() => {
             </div>
             <div>
               {/* Link to accessories page */}
-              <Link to="/user/accessories">
+              <Link to="/athletic/closet">
                 <img
                   src={activatedCloset}
                   alt="closet button to see accessories "
@@ -154,7 +154,7 @@ useEffect(() => {
             </div>
             <div>
               {/* Link to level page */}
-              <Link to="/user/level">
+              <Link to="/athletic/milestone">
                 <img
                   src={deactivatedLevels}
                   alt="levels button to see progress and rewards"
@@ -164,7 +164,7 @@ useEffect(() => {
             </div>
             <div>
               {/* Link to pals page */}
-              <Link to="/user/pal">
+              <Link to="/pal">
                 <img
                   src={deactivatedPals}
                   alt="pals button to connect with others"

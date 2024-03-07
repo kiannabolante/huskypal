@@ -55,7 +55,7 @@ const Tracker = () => {
       {/* Navigation Bar */}
       <section className="logos">
         <div>
-          <Link to="/">
+          <Link to="/athletic">
             <img
               src={deactivatedHome}
               alt="home button to get to home page"
@@ -64,7 +64,7 @@ const Tracker = () => {
           </Link>
         </div>
         <div>
-          <Link to="/user/accessories">
+          <Link to="/athletic/closet">
             <img
               src={deactivatedCloset}
               alt="closet button to see accessories "
@@ -73,7 +73,7 @@ const Tracker = () => {
           </Link>
         </div>
         <div>
-          <Link to="/user/level">
+          <Link to="/athletic/milestone">
             <img
               src={activatedLevels}
               alt="levels button to see progress and rewards"
@@ -82,7 +82,7 @@ const Tracker = () => {
           </Link>
         </div>
         <div>
-          <Link to="/user/pal">
+          <Link to="/pal">
             <img
               src={deactivatedPals}
               alt="pals button to connect with others"

@@ -99,7 +99,7 @@ function Studious() {
     setCurrentLevel(0);
     setLevel(0);
     setTasks(tasks.map(task => ({ ...task, completed: false })));
-    setProgressPercentage(0); 
+    setProgressPercentage(0);
     setLevelMessage('');
   };
 
@@ -109,7 +109,7 @@ function Studious() {
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };
- 
+
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
@@ -181,7 +181,7 @@ function Studious() {
         </div>
       <section className="logos">
         <div>
-        <Link to="/">
+        <Link to="/studious">
           <img
             src={activatedHome}
             alt="home button to get to home page"
@@ -190,7 +190,7 @@ function Studious() {
         </Link>
         </div>
         <div>
-          <Link to="/user/accessories">
+          <Link to="/studious/closet">
             <img
               src={deactivatedCloset}
               alt="closet button to see accessories "
@@ -199,7 +199,7 @@ function Studious() {
           </Link>
         </div>
         <div>
-          <Link to="/user/level">
+          <Link to="/studious/milestone">
             <img
               src={deactivatedLevels}
               alt="levels button to see progress and rewards"
@@ -208,7 +208,7 @@ function Studious() {
           </Link>
         </div>
         <div>
-        <Link to="/user/pal">
+        <Link to="/pal">
                 <img
                   src={deactivatedPals}
                   alt="pals button to connect with others"

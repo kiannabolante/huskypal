@@ -23,7 +23,7 @@ function Creative() {
   const userId = user?._id;
   const componentKey = 'Creative';
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
   const [selectedItems, setSelectedItems] = useState([]);
   const [expandedId, setExpandedId] = useState(null);
 
@@ -108,7 +108,7 @@ function Creative() {
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };
- 
+
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
@@ -179,7 +179,7 @@ function Creative() {
         </div>
       <section className="logos">
         <div>
-        <Link to="/">
+        <Link to="/creative">
           <img
             src={activatedHome}
             alt="home button to get to home page"
@@ -188,7 +188,7 @@ function Creative() {
         </Link>
         </div>
         <div>
-          <Link to="/user/accessories">
+          <Link to="/creative/closet">
             <img
               src={deactivatedCloset}
               alt="closet button to see accessories "
@@ -197,7 +197,7 @@ function Creative() {
           </Link>
         </div>
         <div>
-          <Link to="/user/level">
+          <Link to="/creative/milestone">
             <img
               src={deactivatedLevels}
               alt="levels button to see progress and rewards"
@@ -206,7 +206,7 @@ function Creative() {
           </Link>
         </div>
         <div>
-        <Link to="/user/pal">
+        <Link to="/pal">
                 <img
                   src={deactivatedPals}
                   alt="pals button to connect with others"

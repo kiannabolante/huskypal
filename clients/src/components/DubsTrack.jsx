@@ -93,7 +93,7 @@ function DubsTrack() {
   const toggleExpansion = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
-    
+
   // New event handler for navigation icon clicks
   const handleNavIconClick = (event) => {
     event.stopPropagation(); // Prevents event from bubbling up
@@ -110,11 +110,11 @@ function DubsTrack() {
 
   const selectedItem = location.state ? location.state.selectedItem : null;
   const [suggestion, setSuggestion] = useState('');
- 
+
   const handleSuggestionChange = (event) => {
     setSuggestion(event.target.value);
   };
-   
+
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
@@ -185,16 +185,16 @@ function DubsTrack() {
                 </ul>
             </div>
             <section className="logos" onClick={handleNavIconClick}>
-                <Link to="/user/todolist">
+                <Link to="/athletic">
                     <img src={activatedHome} alt="home button to get to home page" className="imageSize imageSpace" />
                 </Link>
-                <Link to="/user/accessories">
+                <Link to="/athletic/closet">
                     <img src={deactivatedCloset} alt="closet button to see accessories" className="imageSize imageSpace" />
                 </Link>
-                <Link to="/user/level">
+                <Link to="/athletic/milestone">
                     <img src={deactivatedLevels} alt="levels button to see progress and rewards" className="imageSize imageSpace" />
                 </Link>
-                <Link to="/user/pal">
+                <Link to="/pal">
                     <img src={deactivatedPals} alt="pals button to connect with others" className="imageSize imageSpace" />
                 </Link>
             </section>

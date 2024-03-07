@@ -20,6 +20,15 @@ import Dashboard from "./components/Dashboard.jsx";
 import DisplayAll from "./components/DisplayAll.js";
 import AllAboutUs from "./components/AllAboutUs.jsx";
 import ComingSoon from "./components/ComingSoon.jsx";
+import CreativeTracker from "./components/CreativeMilestone.jsx";
+import CreativeCloset from "./components/CreativeCloset.jsx";
+import FoodieCloset from "./components/FoodieCloset.jsx";
+import FoodieMilestone from "./components/FoodieMilestone.jsx";
+import StudiousMilestone from "./components/StudiousMilestone.jsx";
+import StudiousCloset from "./components/StudiousCloset.jsx";
+
+
+
 
 function App() {
   // hold user information
@@ -41,19 +50,35 @@ function App() {
               path="/user/pal"
               element={loggedInUser._id ? <TrackPal /> : <Navigate to="/" />}
             /> */}
-            <Route path="/user/accessories" element={<Closet />} />
-            <Route path="/user/level" element={<Tracker />} />
             <Route path="/home" element={<Homepage />} />
-            <Route path="/user/todolist" element={<DubsTrack />} />
             <Route
               path="/login"
               element={<LoginForm saveLoggedInUser={saveLoggedInUser} />}
             />{" "}
-            <Route path="/user/pal" element={<TrackPal />} />
             <Route path="/" element={<RegistrationForm />} />
+            <Route path="/pal" element={<TrackPal />} />
+
+            {/* creative track links */}
             <Route path="/creative" element={<Creative />} />
-            <Route path="/studious" element={<Studious />} />
+            <Route path="/creative/milestone" element={<CreativeTracker />} />
+            <Route path="/creative/closet" element={<CreativeCloset />} />
+
+            {/* athletic track links */}
+            <Route path="/athletic" element={<DubsTrack />} />
+            <Route path="/athletic/milestone" element={<Tracker />} />
+            <Route path="/athletic/closet" element={<Closet />} />
+
+            {/* foodie track links */}
             <Route path="/foodie" element={<Foodie />} />
+            <Route path="/foodie/milestone" element={<FoodieMilestone />} />
+            <Route path="/foodie/closet" element={<FoodieCloset />} />
+
+            {/* studious track links */}
+            <Route path="/studious" element={<Studious />} />
+            <Route path="/studious/milestone" element={<StudiousMilestone />} />
+            <Route path="/studious/closet" element={<StudiousCloset />} />
+
+
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/user/info" element={<DisplayAll />} />
             <Route path="/about/us" element={<AllAboutUs />} />
