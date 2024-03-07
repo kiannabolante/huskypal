@@ -59,7 +59,8 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
  9. Select the workflow from left sidebar and check the logs and results
 
  ### Demo
- [GitHub Actions Workflow Directory](https://github.com/kiannabolante/huskypal/tree/main/.github/workflows)
+ [GitHub Actions workflow file](https://github.com/kiannabolante/huskypal/blob/main/.github/workflows/huskypal2.yml)
+
 
 ### Another option: If you want to use javascript here is the setup
 - Test-automation Infrastructure setup:
