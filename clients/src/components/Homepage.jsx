@@ -79,7 +79,7 @@ function TraitBox() {
         <label htmlFor="foodie">FOODIE</label>
       </div>
       <div>
-        <button type="button" onClick={handleSubmit}>Submit</button>
+        <button type="button" className="button" onClick={handleSubmit}>Submit</button>
       </div>
       <div className="trait">This trait will determine what UW challenges you're assigned!</div>
     </div>
