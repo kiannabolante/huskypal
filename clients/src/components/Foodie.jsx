@@ -144,7 +144,7 @@ function Foodie() {
       <div className="current-level-display">Level: {level}</div>
       {levelMessage && <div className="level-up-message">{levelMessage}</div>}
       <header className="header" style={{marginTop:"-80px"}}>
-      <div className="trophy-icon">
+      <div className="trophy-icon" style={{marginTop: "100px"}}>
           <img
             src={activatedLevels}
             alt="level display"
