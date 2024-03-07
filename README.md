@@ -58,10 +58,10 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
  8. Got to the repo main page and click the ‘Actions’ tab
  9. Select the workflow from left sidebar and check the logs and results
 
- ###Demo
+ ### Demo
  [GitHub Actions Workflow Directory](https://github.com/kiannabolante/huskypal/tree/main/.github/workflows)
 
-## Another option: If you want to use javascript here is the setup
+### Another option: If you want to use javascript here is the setup
 - Test-automation Infrastructure setup:
 - Install Jest by running npm install --save-dev jest.
 - Add a script to your package.json to run Jest:
