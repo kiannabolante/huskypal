@@ -71,7 +71,7 @@ This way, we catch any issues quickly before they become a problem.
 - **ThunderClient**: API testing tool
 - **Chrome**: Web browser for testing
 - **Node.js**: JavaScript runtime environment
-- **Express**: Web application framework for Node.js (if applicable)
+- **Mongodb Express**: Web application framework for Node.js
 - **CORS (Cross-Origin Resource Sharing)**: Mechanism that allows restricted resources on a web page to be requested from another domain
 - **MongoDB Compass**: GUI for MongoDB
 
