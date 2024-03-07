@@ -9,7 +9,7 @@ HuskyPal aims to transform the UW student experience by making campus exploratio
 
 | Team Member    | Role                | Responsibilities                                               |
 |----------------|---------------------|----------------------------------------------------------------|
-| Fana Hagos     | Frontend + Design  | - Develop track selection, homepage, and challenge suggestion pages<br>- Testing<br>- Some backend|
+| Fana Hagos     | Frontend/Backend + Design  | - Develop track selection, homepage, and challenge suggestion pages<br>- Testing<br>- Some backend|
 | Ramla Abdi     | Backend/Frontend   | - Implement level system for user challenges<br>- Backend and frontend tasks related to challenge tracking |
 | Kianna Bolante | Frontend Design    | - Design frontend interfaces<br>- Work on closet pages          |
 | Fatuma Meshalla| Backend/Frontend   | - Implement login and registration pages<br>- Database setup<br>- Testing<br>- GitHub setup |
@@ -64,7 +64,7 @@ This way, we catch any issues quickly before they become a problem.
  ### Demo
  [GitHub Actions workflow file](https://github.com/kiannabolante/huskypal/blob/main/.github/workflows/huskypal2.yml)
 
-## Development Tools
+# Development Tools
 - **Visual Studio Code**: Integrated Development Environment (IDE)
 - **Git, GitHub**: Version control system and hosting platform for repositories
 - **npm**: Package manager for JavaScript
